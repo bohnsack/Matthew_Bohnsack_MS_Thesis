@@ -1,0 +1,3 @@
+Fri 2011-07-29:
+    - Setup LaTeX framework for thesis
+
