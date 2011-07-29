@@ -1,0 +1,287 @@
+% MS Thesis - Matthew Bohnsack
+
+\documentclass[botnum, fleqn]{unmeethesis}
+\begin{document}
+
+\frontmatter
+
+\title{Increasing Electronic Health Record Usability with the ActiveRecord Design Pattern and Dynamic Programming}
+
+\author{Matthew Bohnsack}
+
+\degreesubject{M.S., Computer Engineering}
+
+\degree{Master of Science \\ Computer Engineering}
+
+\documenttype{Thesis}
+
+\previousdegrees{A.S., Pre-Engineering, North Iowa Area Community College, 1994 \\
+                 B.S., Electrical Engineering, Iowa State University, 1997}
+
+\date{December, \thisyear}
+
+\maketitle
+
+\makecopyright
+
+\begin{dedication}
+   This thesis is dedicated to Elisa my wife and our two daughters Evelyn and Katherine.
+\end{dedication}
+
+\begin{acknowledgments}
+   \vspace{1.1in}
+   I would like to thank my advisor, Professor Gregory Heileman, for his support.
+\end{acknowledgments}
+
+\maketitleabstract
+
+\begin{abstract}
+This is were the abstract will go.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci massa.
+In hac habitasse platea dictumst. Praesent non sem ut diam dignissim elementum.
+Nulla in ligula non enim tristique dignissim. Pellentesque massa leo, ornare eu
+rutrum quis, fringilla at odio. Aliquam leo mi, convallis et volutpat sed,
+pellentesque at purus. Maecenas accumsan magna in ante mattis feugiat. Nam quis
+nisi tellus. Pellentesque a lectus ipsum, eget suscipit ante. In hac habitasse
+platea dictumst. Sed vulputate, arcu auctor sodales vehicula, nisi diam
+dignissim dui, in mollis risus lectus id dolor. Sed ultricies tincidunt elit
+sit amet egestas. Sed sed sodales purus. Proin scelerisque, diam at lacinia
+tristique, metus nulla vehicula est, in blandit dui nibh non quam. Quisque
+posuere porttitor mi in aliquam. Nullam eget pulvinar erat. Quisque ac velit ac
+sapien porttitor euismod non et sem. Donec sodales, erat vitae vestibulum
+eleifend, est nisl venenatis nibh, ac aliquet odio turpis scelerisque libero.
+Sed sapien mauris, dapibus at luctus sed, scelerisque ut arcu.
+
+Maecenas ac mauris urna. Praesent vehicula fringilla condimentum. Nam nec dolor
+ac turpis accumsan scelerisque. Maecenas ut porttitor ipsum. Suspendisse
+lobortis ligula ac metus adipiscing sollicitudin at vulputate lacus. Fusce
+aliquet, libero quis tristique aliquet, nisl sem dapibus dui, mollis
+sollicitudin diam metus at metus. Pellentesque ante ante, accumsan et mattis
+ut, dictum eget libero. Etiam accumsan faucibus lectus, eu aliquet metus
+tincidunt vitae. Sed nec lorem in tellus convallis porttitor nec et diam.
+Praesent risus purus, venenatis vitae tincidunt ac, facilisis eget arcu.
+Pellentesque sit amet nisi quis turpis laoreet venenatis eu in nunc.
+
+\clearpage %(required for 1-page abstract)
+\end{abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\begin{glossary}{Longest string}
+   \item[$a_{lm}$]
+      Taylor series coefficients, where $l,m = \{0..2\}$
+   \item[$A_{\bf{p}}$]
+      Complex-valued scalar denoting the amplitude and phase.
+   \item[$A^T$]
+      Transpose of some relativity matrix.
+\end{glossary}
+
+\mainmatter
+
+\chapter{Introduction}
+
+\section{\label{section:overview}Overview}
+
+This is the introduction, and this is a example of a citation.\cite{JAJA92}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci massa.
+In hac habitasse platea dictumst. Praesent non sem ut diam dignissim elementum.
+Nulla in ligula non enim tristique dignissim. Pellentesque massa leo, ornare eu
+rutrum quis, fringilla at odio. Aliquam leo mi, convallis et volutpat sed,
+pellentesque at purus. Maecenas accumsan magna in ante mattis feugiat. Nam quis
+nisi tellus. Pellentesque a lectus ipsum, eget suscipit ante. In hac habitasse
+platea dictumst. Sed vulputate, arcu auctor sodales vehicula, nisi diam
+dignissim dui, in mollis risus lectus id dolor. Sed ultricies tincidunt elit
+sit amet egestas. Sed sed sodales purus. Proin scelerisque, diam at lacinia
+tristique, metus nulla vehicula est, in blandit dui nibh non quam. Quisque
+posuere porttitor mi in aliquam. Nullam eget pulvinar erat. Quisque ac velit ac
+sapien porttitor euismod non et sem. Donec sodales, erat vitae vestibulum
+eleifend, est nisl venenatis nibh, ac aliquet odio turpis scelerisque libero.
+Sed sapien mauris, dapibus at luctus sed, scelerisque ut arcu.
+
+Maecenas ac mauris urna. Praesent vehicula fringilla condimentum. Nam nec dolor
+ac turpis accumsan scelerisque. Maecenas ut porttitor ipsum. Suspendisse
+lobortis ligula ac metus adipiscing sollicitudin at vulputate lacus. Fusce
+aliquet, libero quis tristique aliquet, nisl sem dapibus dui, mollis
+sollicitudin diam metus at metus. Pellentesque ante ante, accumsan et mattis
+ut, dictum eget libero. Etiam accumsan faucibus lectus, eu aliquet metus
+tincidunt vitae. Sed nec lorem in tellus convallis porttitor nec et diam.
+Praesent risus purus, venenatis vitae tincidunt ac, facilisis eget arcu.
+Pellentesque sit amet nisi quis turpis laoreet venenatis eu in nunc.
+
+Cras velit nibh, suscipit ac ultrices quis, laoreet nec elit. Proin varius, mi
+non convallis sollicitudin, enim metus tristique lacus, non dignissim nibh nibh
+vel turpis. Ut odio dui, vulputate sed commodo vel, venenatis ut ipsum. Lorem
+ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est diam,
+tristique ut facilisis eu, mattis pellentesque dolor. Nunc nulla dui, aliquet
+eu semper at, consequat id odio. Suspendisse dignissim arcu non purus
+vestibulum eu accumsan arcu vulputate. Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et
+magnis dis parturient montes, nascetur ridiculus mus. Cras vehicula massa id
+sapien blandit tristique. Ut mattis dapibus malesuada. Integer rutrum, libero
+et pellentesque venenatis, nisl ligula tempor diam, sit amet dapibus libero
+arcu vitae sapien. Donec sagittis tincidunt elit non faucibus. Sed dapibus
+augue a nulla ultrices aliquet fermentum odio consectetur. Sed volutpat ornare
+porta. Curabitur dapibus nulla vel orci tempus at dignissim ante adipiscing.
+Aliquam congue cursus semper. Cras nulla libero, porta ac ultrices nec,
+consectetur sed justo. Donec sed augue mauris, vitae adipiscing eros.
+
+Maecenas non velit sem, non mollis mi. Integer ut enim enim. Curabitur sed est
+at tellus porttitor placerat. Maecenas ultrices turpis nec tortor interdum
+convallis vitae et est. Nullam vestibulum elit et nisl mattis adipiscing.
+Phasellus eget varius odio. Praesent ac metus at libero vestibulum luctus id
+eget nisl. Praesent posuere massa eu urna blandit ut consequat justo pharetra.
+Nunc faucibus enim a enim commodo dapibus. Mauris rhoncus eros nunc. Donec
+feugiat urna ac quam elementum quis hendrerit sapien dignissim. Vestibulum
+porta turpis ac lacus vestibulum ut consequat ipsum bibendum. Praesent pretium
+eros sit amet mauris faucibus vitae ultrices nunc adipiscing. Fusce leo lectus,
+consequat tincidunt aliquam vel, aliquet a ligula.
+
+Quisque eget condimentum mauris. Nam quis purus eget justo venenatis vehicula
+nec id velit. Curabitur a quam ipsum, luctus gravida urna. Integer tristique
+risus et lectus dictum ac ultricies nulla pretium. Ut sit amet viverra diam.
+Praesent ac nisl quis nibh bibendum ullamcorper. Nullam pharetra risus sit amet
+tortor convallis euismod accumsan sit amet quam. Duis fermentum aliquet
+suscipit. Praesent in sem eros, porta gravida quam. Sed elementum magna
+fringilla leo fringilla semper ornare mauris pulvinar. In vel eleifend mauris.
+Pellentesque neque tortor, euismod ut vestibulum rutrum, gravida sed sem. Lorem
+ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt augue ac
+tellus adipiscing fringilla. Suspendisse ac dolor orci. Praesent dictum dolor
+quis lorem sollicitudin tempus. Nunc dictum pretium nunc, ac egestas velit
+imperdiet eget. Curabitur nec mi massa, sit amet vestibulum libero.
+
+
+\section{Conclusions}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci massa.
+In hac habitasse platea dictumst. Praesent non sem ut diam dignissim elementum.
+Nulla in ligula non enim tristique dignissim. Pellentesque massa leo, ornare eu
+rutrum quis, fringilla at odio. Aliquam leo mi, convallis et volutpat sed,
+pellentesque at purus. Maecenas accumsan magna in ante mattis feugiat. Nam quis
+nisi tellus. Pellentesque a lectus ipsum, eget suscipit ante. In hac habitasse
+platea dictumst. Sed vulputate, arcu auctor sodales vehicula, nisi diam
+dignissim dui, in mollis risus lectus id dolor. Sed ultricies tincidunt elit
+sit amet egestas. Sed sed sodales purus. Proin scelerisque, diam at lacinia
+tristique, metus nulla vehicula est, in blandit dui nibh non quam. Quisque
+posuere porttitor mi in aliquam. Nullam eget pulvinar erat. Quisque ac velit ac
+sapien porttitor euismod non et sem. Donec sodales, erat vitae vestibulum
+eleifend, est nisl venenatis nibh, ac aliquet odio turpis scelerisque libero.
+Sed sapien mauris, dapibus at luctus sed, scelerisque ut arcu.
+
+Maecenas ac mauris urna. Praesent vehicula fringilla condimentum. Nam nec dolor
+ac turpis accumsan scelerisque. Maecenas ut porttitor ipsum. Suspendisse
+lobortis ligula ac metus adipiscing sollicitudin at vulputate lacus. Fusce
+aliquet, libero quis tristique aliquet, nisl sem dapibus dui, mollis
+sollicitudin diam metus at metus. Pellentesque ante ante, accumsan et mattis
+ut, dictum eget libero. Etiam accumsan faucibus lectus, eu aliquet metus
+tincidunt vitae. Sed nec lorem in tellus convallis porttitor nec et diam.
+Praesent risus purus, venenatis vitae tincidunt ac, facilisis eget arcu.
+Pellentesque sit amet nisi quis turpis laoreet venenatis eu in nunc.
+
+Cras velit nibh, suscipit ac ultrices quis, laoreet nec elit. Proin varius, mi
+non convallis sollicitudin, enim metus tristique lacus, non dignissim nibh nibh
+vel turpis. Ut odio dui, vulputate sed commodo vel, venenatis ut ipsum. Lorem
+ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est diam,
+tristique ut facilisis eu, mattis pellentesque dolor. Nunc nulla dui, aliquet
+eu semper at, consequat id odio. Suspendisse dignissim arcu non purus
+vestibulum eu accumsan arcu vulputate. Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et
+magnis dis parturient montes, nascetur ridiculus mus. Cras vehicula massa id
+sapien blandit tristique. Ut mattis dapibus malesuada. Integer rutrum, libero
+et pellentesque venenatis, nisl ligula tempor diam, sit amet dapibus libero
+arcu vitae sapien. Donec sagittis tincidunt elit non faucibus. Sed dapibus
+augue a nulla ultrices aliquet fermentum odio consectetur. Sed volutpat ornare
+porta. Curabitur dapibus nulla vel orci tempus at dignissim ante adipiscing.
+Aliquam congue cursus semper. Cras nulla libero, porta ac ultrices nec,
+consectetur sed justo. Donec sed augue mauris, vitae adipiscing eros.
+
+Maecenas non velit sem, non mollis mi. Integer ut enim enim. Curabitur sed est
+at tellus porttitor placerat. Maecenas ultrices turpis nec tortor interdum
+convallis vitae et est. Nullam vestibulum elit et nisl mattis adipiscing.
+Phasellus eget varius odio. Praesent ac metus at libero vestibulum luctus id
+eget nisl. Praesent posuere massa eu urna blandit ut consequat justo pharetra.
+Nunc faucibus enim a enim commodo dapibus. Mauris rhoncus eros nunc. Donec
+feugiat urna ac quam elementum quis hendrerit sapien dignissim. Vestibulum
+porta turpis ac lacus vestibulum ut consequat ipsum bibendum. Praesent pretium
+eros sit amet mauris faucibus vitae ultrices nunc adipiscing. Fusce leo lectus,
+consequat tincidunt aliquam vel, aliquet a ligula.
+
+Quisque eget condimentum mauris. Nam quis purus eget justo venenatis vehicula
+nec id velit. Curabitur a quam ipsum, luctus gravida urna. Integer tristique
+risus et lectus dictum ac ultricies nulla pretium. Ut sit amet viverra diam.
+Praesent ac nisl quis nibh bibendum ullamcorper. Nullam pharetra risus sit amet
+tortor convallis euismod accumsan sit amet quam. Duis fermentum aliquet
+suscipit. Praesent in sem eros, porta gravida quam. Sed elementum magna
+fringilla leo fringilla semper ornare mauris pulvinar. In vel eleifend mauris.
+Pellentesque neque tortor, euismod ut vestibulum rutrum, gravida sed sem. Lorem
+ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt augue ac
+tellus adipiscing fringilla. Suspendisse ac dolor orci. Praesent dictum dolor
+quis lorem sollicitudin tempus. Nunc dictum pretium nunc, ac egestas velit
+imperdiet eget. Curabitur nec mi massa, sit amet vestibulum libero.
+
+\chapter{Future Work}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci massa.
+In hac habitasse platea dictumst. Praesent non sem ut diam dignissim elementum.
+Nulla in ligula non enim tristique dignissim. Pellentesque massa leo, ornare eu
+rutrum quis, fringilla at odio. Aliquam leo mi, convallis et volutpat sed,
+pellentesque at purus. Maecenas accumsan magna in ante mattis feugiat. Nam quis
+nisi tellus. Pellentesque a lectus ipsum, eget suscipit ante. In hac habitasse
+platea dictumst. Sed vulputate, arcu auctor sodales vehicula, nisi diam
+dignissim dui, in mollis risus lectus id dolor. Sed ultricies tincidunt elit
+sit amet egestas. Sed sed sodales purus. Proin scelerisque, diam at lacinia
+tristique, metus nulla vehicula est, in blandit dui nibh non quam. Quisque
+posuere porttitor mi in aliquam. Nullam eget pulvinar erat. Quisque ac velit ac
+sapien porttitor euismod non et sem. Donec sodales, erat vitae vestibulum
+eleifend, est nisl venenatis nibh, ac aliquet odio turpis scelerisque libero.
+Sed sapien mauris, dapibus at luctus sed, scelerisque ut arcu.
+
+Maecenas ac mauris urna. Praesent vehicula fringilla condimentum. Nam nec dolor
+ac turpis accumsan scelerisque. Maecenas ut porttitor ipsum. Suspendisse
+lobortis ligula ac metus adipiscing sollicitudin at vulputate lacus. Fusce
+aliquet, libero quis tristique aliquet, nisl sem dapibus dui, mollis
+sollicitudin diam metus at metus. Pellentesque ante ante, accumsan et mattis
+ut, dictum eget libero. Etiam accumsan faucibus lectus, eu aliquet metus
+tincidunt vitae. Sed nec lorem in tellus convallis porttitor nec et diam.
+Praesent risus purus, venenatis vitae tincidunt ac, facilisis eget arcu.
+Pellentesque sit amet nisi quis turpis laoreet venenatis eu in nunc.
+
+Cras velit nibh, suscipit ac ultrices quis, laoreet nec elit. Proin varius, mi
+non convallis sollicitudin, enim metus tristique lacus, non dignissim nibh nibh
+vel turpis. Ut odio dui, vulputate sed commodo vel, venenatis ut ipsum. Lorem
+ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est diam,
+tristique ut facilisis eu, mattis pellentesque dolor. Nunc nulla dui, aliquet
+eu semper at, consequat id odio. Suspendisse dignissim arcu non purus
+vestibulum eu accumsan arcu vulputate. Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et
+magnis dis parturient montes, nascetur ridiculus mus. Cras vehicula massa id
+sapien blandit tristique. Ut mattis dapibus malesuada. Integer rutrum, libero
+et pellentesque venenatis, nisl ligula tempor diam, sit amet dapibus libero
+arcu vitae sapien. Donec sagittis tincidunt elit non faucibus. Sed dapibus
+augue a nulla ultrices aliquet fermentum odio consectetur. Sed volutpat ornare
+porta. Curabitur dapibus nulla vel orci tempus at dignissim ante adipiscing.
+Aliquam congue cursus semper. Cras nulla libero, porta ac ultrices nec,
+consectetur sed justo. Donec sed augue mauris, vitae adipiscing eros.
+
+\chapter*{Appendices}
+
+\addcontentsline{toc}{chapter}{Appendices}
+ % Next lines duplicated from .toc file and used to create mini
+ % "Appendix Table of Contents," if desired:
+   \contentsline {chapter}{\numberline {A}Proving $E=MC^2$}{4}
+   \contentsline {chapter}{\numberline {B}Derivation of $A = \pi r^2$}{5}
+ % End mini table of contents
+
+\appendix
+\chapter{Proving $E=MC^2$}
+   I refer the reader to many of grandpa's famous books on this subject.
+\chapter{Derivation of $A = \pi r^2$}
+   A circle is really a square without corners.  QED.
+
+%\bibliographystyle{AMS}
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\end{document}
