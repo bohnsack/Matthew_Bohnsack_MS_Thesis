@@ -1,0 +1,30 @@
+This directory contains the two files needed to create your own signature page 
+which  will exactly match  your thesis or  dissertation.  Simply place sig.tex
+and unmthesis.sty in your directory, make appropriate  changes to the  sig.tex
+file, and execute "latex sig.tex".   FINALLY, PRINT THIS  OUT ON A RED  BORDER
+PAGE (available here or the OGS home page).
+
+RED BOX PAGES:  Use  either redbox.pdf  or redbox.ps  for blank red box pages.
+-------------   In  conjunction with the 'nobox' option  in  your  thesis, you
+                can print  title and abstract  title on  these sheets.  Better
+                yet, turn  on 'final' option in your  thesis to  print red box
+                directly (see styles manual, page 2).
+
+                Also, use a blank redbox for the LaTeX signature page (it will
+                NOT create the red box automatically.
+ 
+The files in this directory are as follows:
+
+sig.tex:       Your custom signature title  page file.  All  you need to do is 
+               change your  name, department, and paper type (either thesis or
+               dissertation).
+unmthesis.sty: The associated style file  that is called  automatically by the
+               sig.tex document.
+redbox.pdf,
+redbox.ps:     Use either of these  to produce a blank page with only  the red
+               border box.
+--
+These  files are  maintained  by Neall Doren (nedoren@sandia.gov).  Email with 
+corrections or questions.
+
+Last modified: 03/26/2002

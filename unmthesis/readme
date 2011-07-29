@@ -1,0 +1,33 @@
+This directory contains  all the information  needed to use the UNM thesis and
+dissertation style sheets.  
+
+NINETY PERCENT OF USERS' QUESTIONS  ARE ANSWERED IN THE "STYLES" MANUAL in the
+user_manuals section.
+
+NEW:  Nifty LaTeX signature  page, and blank red box frames for title page and
+---   abstract title page.  See 'signatu_page' directory.
+
+The subdirectories contain the following information:
+
+style_sheets: Contains necessary LaTeX2e files for using the UNM thesis style.
+              Also has a functional, sample thesis you can modify as the basis
+              of your thesis or dissertation.  Also, one  example of  a BiBTeX
+              database for your references.  Finally, a style file for writing
+              technical reports.
+user_manuals: Manual section.  Contains the thesis manual, the textips manual,
+              and  the slide presentations  from the  OGS LaTeX  seminar.  All
+              documents are provided in both PostScript (ps) and Adobe Acrobat
+              (pdf) format.  Seminar  attendees  received these  manuals  in a 
+              hardcopy format.
+textips_docs: Documentation only.  Contains information  on LaTeX2e  utilities 
+              as well as specific package  documentation,  as described in the
+              textips manual (found in user_manuals directory).
+signatu_page: Use this .tex file (along with associated  style file) to create
+              a beautiful  signature page  that will exactly match your thesis
+              or dissertation.  ALSO:  blank red box frame pages for title and
+              abstract title.
+--
+These  files are  maintained by Neall Doren  (nedoren@sandia.gov).  Email with 
+corrections or questions.
+
+Last updated: 03/27/2002
