@@ -1,0 +1,11 @@
+Matthew Bohnsack's MS Thesis
+===============================================================================================
+
+README ------------------- this file
+misc       --------------- miscellaneous things, including a work log spreadsheet
+references --------------- freely-redistributable documents that are referenced in this work
+thesis ------------------- thesis source files
+thesis/mpb_ms_thesis.pdf - the actual typeset thesis
+unmthesis ---------------- LaTeX style stuff taken from: http://www.math.unm.edu/~nedoren/latex/
+
+===============================================================================================
