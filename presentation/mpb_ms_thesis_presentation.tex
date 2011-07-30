@@ -1,0 +1,86 @@
+\documentclass[mathserif,xcolor=dvipsnames,hyperref={bookmarks=true}]{beamer}
+%\documentclass[mathserif,xcolor=dvipsnames,handout]{beamer}
+%\usepackage{listings}
+\usepackage[scaled]{helvet}
+\usepackage{eulervm}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{xmpincl}  % http://www.ctan.org/tex-archive/macros/latex/contrib/xmpincl/
+\usepackage{listings}
+%\includexmp{byncsa}
+\usepackage[binary,amssymb]{SIunits}
+\usefonttheme{structurebold}
+\usecolortheme[named=Maroon]{structure}
+\usetheme{Antibes}
+\usecolortheme{lily}
+\useoutertheme{infolines}
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\mytitle}{Increasing Electronic Health Record Usability with the ActiveRecord Design Pattern and Dynamic Programming}
+\newcommand{\myshorttitle}{ActiveEHR}
+\newcommand{\myauthor}{Matthew Paul Bohnsack}
+\newcommand{\myshortauthor}{Matthew Bohnsack}
+
+% Check this for automating the creation of different files: slides, handouts, etc...
+% http://www.pletscher.org/writings/latex/Makefile
+% http://www.pletscher.org/writings/latex/beamer.php
+
+% Do this if handouts...
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[letterpapper,border shrink=5mm]
+%\mode<handout>{\setbeamercolor{background canvas}{bg=black!5}}
+
+\usepackage{default}
+
+\title[\myshorttitle]{\mytitle}
+%\subtitle{Including a Usage Management Example in Ruby}
+\author[\myshortauthor]{\myauthor}
+\institute[UNM]{University of New Mexico\\Albuquerque, New Mexico USA\\[2ex]\texttt{bohnsack@gmail.com}}
+%\date{Friday March 25, 2011}
+
+\newcommand{\putat}[3]{\begin{picture}(0,0)(0,0)\put(#1,#2){#3}\end{picture}}
+
+
+\lstset{language=bash,rulesepcolor=\color{Gray},frame=shadowbox,basicstyle=\tiny\ttfamily}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \titlepage
+    \begin{center}
+        \includegraphics[width=0.24\textwidth]{resources/logos/UNM/UNM_logo_PMS200C.pdf}
+    \end{center}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Creative Commons}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]
+    \tableofcontents[currentsection,hideallsubsections]
+\end{frame}
+
+    \subsection{Overview}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Overview}
+        \begin{itemize}
+            \item Blarg
+            \item foo
+            \item bar
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[t]
+        \frametitle{Overview (cont.)}
+        \begin{itemize}
+            \item a
+            \item b
+            \item c
+        \end{itemize}
+    \end{frame}
+
+\end{document}
