@@ -1,0 +1,4 @@
+# We keep some of these files in this directory that aren't opensource, but we
+# don't want to push them to the public repository
+metaprogramming_ruby.pragmatic.2010.pdf
+
