@@ -1,3 +1,13 @@
+TODO:
+    - Read Google Health API stuff
+    - Download my Google Health CCR
+    - Get account and login to Microsoft Health Vault
+Sun 2011-07-31:
+    - read Fowler reference
+    - read more in dynamic programming book
+Sat 2011-07-30:
+    - LaTeX work, including making some of my references work
+    - start at presentation
+    - read Ravi's thesis
 Fri 2011-07-29:
     - Setup LaTeX framework for thesis
-
