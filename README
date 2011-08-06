@@ -1,11 +1,16 @@
 Matthew Bohnsack's MS Thesis
 ===============================================================================================
 
-README ------------------- this file
-misc       --------------- miscellaneous things, including a work log spreadsheet
-references --------------- freely-redistributable documents that are referenced in this work
-thesis ------------------- thesis source files
-thesis/mpb_ms_thesis.pdf - the actual typeset thesis
-unmthesis ---------------- LaTeX style stuff taken from: http://www.math.unm.edu/~nedoren/latex/
+README ------------------------ this file
+misc -------------------------- miscellaneous things, including a work log spreadsheet
+paper ------------------------- source files for paper, based on thesis research
+paper/mpb_ms_thesis_paper.pdf - the actual typeset paper
+pres -------------------------- source files for thesis presentation
+pres/mpb_ms_thesis_pres.pdf --- the actual typeset thesis presentation
+references -------------------- freely-redistributable documents that are referenced in this work
+resources --------------------- Figures, images, diagrams, etc. shared between thesis, pres etc.
+thesis ------------------------ thesis source files
+thesis/mpb_ms_thesis.pdf ------ the actual typeset thesis
+unmthesis --------------------- LaTeX style stuff taken from: http://www.math.unm.edu/~nedoren/latex/
 
 ===============================================================================================
