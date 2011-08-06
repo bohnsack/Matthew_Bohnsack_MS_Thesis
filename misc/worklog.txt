@@ -1,13 +1,95 @@
 TODO:
-    - Read Google Health API stuff
-    - Download my Google Health CCR
-    - Get account and login to Microsoft Health Vault
-Sun 2011-07-31:
+    - Read about sequence diagrams
+    - Create some sequence diagrams for how the envisioned service could work
+    - Put some of this new stuff into a presentation, working towards giving a
+      presentation on next Friday's research group meeting
     - read Fowler reference
     - read more in dynamic programming book
+    - learned about synctex - should get this going on Linux with vim+evince:
+      http://tex.stackexchange.com/questions/2941/how-to-setup-synctex-with-vim-pdflatex-and-an-open-source-pdf-viewer-under-linux
+      http://ubuntuforums.org/showthread.php?t=1716268
+    - download and read CCREL references from http://wiki.creativecommons.org/CC_REL
+    - write in presentation about current limitations with CC more rights model
+    - write in presentation about sequence diagram
+    - get information about google and yahoo (and maybe bing) search for CC-licensed content
+    - checkout http://www.expono.com/ which is a sort of flickr alternative
+    - checkout vimeo for CC stuffjj
+    - some of my text on license discriptions in my old CC presentation comes
+      from a CC source that isn't cited.  Need to find exact source and provide
+      citation, if similar words/descriptions are used in final
+      paper/thesis/presentation.
+Sat 2011-08-06:
+    - some use cases:
+
+------------------------------+--------------------------------------------------
+Item                          | Value
+------------------------------+--------------------------------------------------
+Use-case name:                | Compliance Checking CC-Licensed LaTeX Document
+                              | Which is Mixed with Other CC-Licensed Content
+------------------------------+--------------------------------------------------
+Brief description:            |
+------------------------------+--------------------------------------------------
+Actor(s) involved:            | 1. Primary author (creating LaTeX document)
+                              | 2. Image owner 1
+                              | 3. Image owner 2
+                              | 4. Image owner 3
+------------------------------+--------------------------------------------------
+Basic flow of events:         | 1. Primary author downloads CC-licensed image
+                              |    files from the web for mashup in a new LaTeX
+                              |    file that will also be CC-licensed with a
+                              |    license that may be of a different type than
+                              |    the ones associated with the images.
+                              | 2. 
+------------------------------+--------------------------------------------------
+Alternate flow(s) of events:  |
+------------------------------+--------------------------------------------------
+Pre-condition of use case:    |
+------------------------------+--------------------------------------------------
+Post-condition of use case:   |
+------------------------------+--------------------------------------------------
+Special requirements:         |
+------------------------------+--------------------------------------------------
+
+    - did: exiftool -overwrite_original -scanforXMP -XMP:OwnerName="Matthew Bohnsack
+      <bohnsack@gmail.com>" -XMP-cc:AttributionName="Matthew Bohnsack"
+      -XMP-cc:License="http://creativecommons.org/licenses/by/3.0/"
+      -XMP-cc:attributionURL="Http://bohnsack.com/" copy.jpg
+    - and saw: exiftool -k copy.jpg
+        ExifTool Version Number         : 8.61
+        File Name                       : copy.jpg
+        Directory                       : .
+        File Size                       : 118 kB
+        File Modification Date/Time     : 2011:08:06 14:54:13-06:00
+        File Permissions                : rw-r--r--
+        File Type                       : JPEG
+        MIME Type                       : image/jpeg
+        JFIF Version                    : 1.01
+        Resolution Unit                 : inches
+        X Resolution                    : 72
+        Y Resolution                    : 72
+        XMP Toolkit                     : Image::ExifTool 8.61                  <==========
+        Owner Name                      : Matthew Bohnsack <bohnsack@gmail.com> <==========
+        Attribution Name                : Matthew Bohnsack <===============================
+        Attribution URL                 : Http://bohnsack.com/ <===========================
+        License                         : http://creativecommons.org/licenses/by/3.0/ <====
+        Image Width                     : 718
+        Image Height                    : 479
+        Encoding Process                : Baseline DCT, Huffman coding
+        Bits Per Sample                 : 8
+        Color Components                : 3
+        Y Cb Cr Sub Sampling            : YCbCr4:4:4 (1 1)
+        Image Size                      : 718x479
+    - lots of exploration of how flickr currently works
+    - looked at UML sequence diagrams and use case diagrams
+    - worked on thesis project with git
+    - reviewed old CC presentation
+Fri 2011-08-05:
+    - Prof and others in research group convinced me to switch topic to one
+      based on creative commons
+Sun 2011-07-31:
 Sat 2011-07-30:
     - LaTeX work, including making some of my references work
     - start at presentation
     - read Ravi's thesis
 Fri 2011-07-29:
-    - Setup LaTeX framework for thesis
+    - Setup LaTeX framework for thesisk
