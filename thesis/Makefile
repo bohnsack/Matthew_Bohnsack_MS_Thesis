@@ -1,3 +1,4 @@
+# vim: tabstop=8 shiftwidth=8 noexpandtab
 # so latex can find the Sandia beamer theme (assumes redsky-tools layout)
 #export TEXINPUTS = .:../beamerthemes:
 
