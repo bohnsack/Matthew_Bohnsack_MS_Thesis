@@ -1,9 +1,10 @@
 % MS Thesis - Matthew Bohnsack
 
-\documentclass[botnum, fleqn]{unmeethesis}
+%\documentclass[twoside,botnum,fleqn,final]{unmeethesis}
+\documentclass[botnum,fleqn,final]{unmeethesis}
 
 % Set Title and Author
-\newcommand{\mytitle}{Increasing Electronic Health Record Usability with the ActiveRecord Design Pattern and Dynamic Programming}
+\newcommand{\mytitle}{Applying Metaprogramming and the ActiveRecord Design Pattern to Personal Health Records}
 \newcommand{\myauthor}{Matthew Paul Bohnasck}
 
 % Font settings:
@@ -62,7 +63,8 @@
 \previousdegrees{A.S., Pre-Engineering, North Iowa Area Community College, 1994 \\
                  B.S., Electrical Engineering, Iowa State University, 1997}
 
-\date{September, \thisyear}
+%\date{September, \thisyear}
+\date{\today}
 
 \maketitle
 
@@ -97,16 +99,6 @@ sapien porttitor euismod non et sem. Donec sodales, erat vitae vestibulum
 eleifend, est nisl venenatis nibh, ac aliquet odio turpis scelerisque libero.
 Sed sapien mauris, dapibus at luctus sed, scelerisque ut arcu.
 
-Maecenas ac mauris urna. Praesent vehicula fringilla condimentum. Nam nec dolor
-ac turpis accumsan scelerisque. Maecenas ut porttitor ipsum. Suspendisse
-lobortis ligula ac metus adipiscing sollicitudin at vulputate lacus. Fusce
-aliquet, libero quis tristique aliquet, nisl sem dapibus dui, mollis
-sollicitudin diam metus at metus. Pellentesque ante ante, accumsan et mattis
-ut, dictum eget libero. Etiam accumsan faucibus lectus, eu aliquet metus
-tincidunt vitae. Sed nec lorem in tellus convallis porttitor nec et diam.
-Praesent risus purus, venenatis vitae tincidunt ac, facilisis eget arcu.
-Pellentesque sit amet nisi quis turpis laoreet venenatis eu in nunc.
-
 \clearpage %(required for 1-page abstract)
 \end{abstract}
 
@@ -114,13 +106,13 @@ Pellentesque sit amet nisi quis turpis laoreet venenatis eu in nunc.
 \listoffigures
 \listoftables
 
-\begin{glossary}{Longest string}
-   \item[$a_{lm}$]
-      Taylor series coefficients, where $l,m = \{0..2\}$
-   \item[$A_{\bf{p}}$]
-      Complex-valued scalar denoting the amplitude and phase.
-   \item[$A^T$]
-      Transpose of some relativity matrix.
+\begin{glossary}{UHR}
+   \item[CCR] Continuity of Care Record
+   \item[EHR] Electronic Health Record
+   \item[EMR] Electronic Medical Record
+   \item[PHR] Personal Health Record
+   \item[UHR] Universal Health Record
+   \item[XML] eXtensible Markup Language
 \end{glossary}
 
 \mainmatter
@@ -133,11 +125,12 @@ Pellentesque sit amet nisi quis turpis laoreet venenatis eu in nunc.
 \section{\label{section:intro:overview}Overview}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-This is the introduction, and this is a example of a citation.\cite{JAJA92} I'm
-looking at the Fowler book.\cite{FOWLER:2003} I'm also looking at the Perrotta
-book.\cite{PERROTTA:2010}
+This is the introduction, and this is a example of a citation.\cite{JaJa:1992}
+I'm looking at the Fowler book.\cite{Fowler:2003} I'm also looking at the
+Perrotta book.\cite{Perrotta:2010}  Ravi's thesis also has some good
+stuff.\cite{Ravi:2011}
 
-It's possible to do multiple citations at once.\cite{FOWLER:2003,PERROTTA:2010}
+It's possible to do multiple citations at once.\cite{Fowler:2003,Perrotta:2010}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci massa.
 In hac habitasse platea dictumst. Praesent non sem ut diam dignissim elementum.
@@ -215,6 +208,18 @@ imperdiet eget. Curabitur nec mi massa, sit amet vestibulum libero.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\label{section:intro:dp}Dynamic Programming}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\label{section:intro:mot}Motivation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\label{section:intro:rw}Related Work}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\label{section:intro:approach}Approach}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
