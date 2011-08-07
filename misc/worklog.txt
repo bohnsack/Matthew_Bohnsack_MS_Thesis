@@ -19,9 +19,12 @@ TODO:
       citation, if similar words/descriptions are used in final
       paper/thesis/presentation.
     - literature search for CC compliance checking tools
+    - Have Makefile automatically take Inkscape SVG and convert it to PDF on
+      the command line and have these conversions be a dependency for rebuild
+      of top-level projects.
 Sun 2011-08-07:
-    - worked on proposal presentation
     - more work on use cases (see below)
+    - Created Inkscape SVG/PDF usecase diagram for usecase #1
 Sat 2011-08-06:
     - some use cases:
 
