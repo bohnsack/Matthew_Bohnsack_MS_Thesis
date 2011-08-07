@@ -13,11 +13,15 @@ TODO:
     - write in presentation about sequence diagram
     - get information about google and yahoo (and maybe bing) search for CC-licensed content
     - checkout http://www.expono.com/ which is a sort of flickr alternative
-    - checkout vimeo for CC stuffjj
+    - checkout vimeo for CC stuff
     - some of my text on license discriptions in my old CC presentation comes
       from a CC source that isn't cited.  Need to find exact source and provide
       citation, if similar words/descriptions are used in final
       paper/thesis/presentation.
+    - literature search for CC compliance checking tools
+Sun 2011-08-07:
+    - worked on proposal presentation
+    - more work on use cases (see below)
 Sat 2011-08-06:
     - some use cases:
 
@@ -30,22 +34,74 @@ Use-case name:                | Compliance Checking CC-Licensed LaTeX Document
 Brief description:            |
 ------------------------------+--------------------------------------------------
 Actor(s) involved:            | 1. Primary author (creating LaTeX document)
-                              | 2. Image owner 1
-                              | 3. Image owner 2
-                              | 4. Image owner 3
+                              | 2. Image owner 1 (image mixed into LaTeX document)
+                              | 3. Image owner 2 (image mixed into LaTeX document)
+                              | 4. Image owner 3 (image mixed into LaTeX document)
 ------------------------------+--------------------------------------------------
-Basic flow of events:         | 1. Primary author downloads CC-licensed image
-                              |    files from the web for mashup in a new LaTeX
-                              |    file that will also be CC-licensed with a
-                              |    license that may be of a different type than
-                              |    the ones associated with the images.
-                              | 2. 
+Basic flow of events:         | 1. The primary author downloads multiple CC-licensed
+                              |    image files from the web for mashup in a new
+                              |    LaTeX file that will also be CC-licensed with
+                              |    a license that may be of a different type
+                              |    than the ones associated with the images.
+                              | 2. The primary author annotates LaTeX file to note
+                              |    the type of CC license that it is intended
+                              |    the be licensed under.
+                              | 3. The primary author runs a compliance checking tool
+                              |    on their LaTeX document to determine if their
+                              |    intended license is compatible in a mash-up
+                              |    with the images that are included within it.
+                              | 4. The compliance checking tool reports to the
+                              |    primary author that the document's intended
+                              |    license is compatible with with the CC-licensed
+                              |    images that are included within it.
 ------------------------------+--------------------------------------------------
-Alternate flow(s) of events:  |
+Alternate flow(s) of events:  | 1. The primary author downloads multiple CC-licensed
+                              |    image files from the web for mashup in a new
+                              |    LaTeX file that will also be CC-licensed with
+                              |    a license that may be of a different type
+                              |    than the ones associated with the images.
+                              | 2. The primary author annotates LaTeX file to note
+                              |    the type of CC license that it is intended
+                              |    the be licensed under.
+                              | 3. The primary author runs a compliance checking tool
+                              |    on their LaTeX document to determine if their
+                              |    intended license is compatible in a mash-up
+                              |    with the images that are included within it.
+                              | 4. The compliance checking tool reports that it
+                              |    can not determine compliance because, e.g.,
+                              |    it can't determine the document's intended
+                              |    license or the license(s) of the mixed in
+                              |    image(s).
+                              | 5. The compliance checking tool reports to the
+                              |    primary author that the document's intended
+                              |    license is not compatible with with the
+                              |    CC-licensed images that are included within it.
+                              | 6. The compliance checking tool explains why
+                              |    the document's intended license is not
+                              |    compatabile with the CC-licensed images that
+                              |    are included within it and offers possible
+                              |    ways to fix the problem (e.g., remove or find
+                              |    alternate images for those that are
+                              |    problematic, change the document's license to
+                              |    that which is less restrictive, etc.)
+                              | 7. After the compliance checking tool indicates
+                              |    non-compliance and indicates what might be
+                              |    done to correct the situation, the primary
+                              |    author may attempt to make adjustments/corrections
+                              |    and re-run the compliance tool.
 ------------------------------+--------------------------------------------------
-Pre-condition of use case:    |
+Pre-conditions of use case:   | The primary author may not know for certain
+                              | whether or not the mash-up document with its
+                              | intended license is compatible with the third-party
+                              | CC-licensed images that are included within it.
 ------------------------------+--------------------------------------------------
-Post-condition of use case:   |
+Post-conditions of use case:  | The primary author will know whether or not the
+                              | document and its intended license is compatible
+                              | with the CC-licensed images that are included
+                              | within it.  If the document is not comptible with
+                              | its intended license, the primary author will
+                              | why it is not compliant and what might be done to
+                              | correct the compliance issue.
 ------------------------------+--------------------------------------------------
 Special requirements:         |
 ------------------------------+--------------------------------------------------
