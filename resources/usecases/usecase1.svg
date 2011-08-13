@@ -14,7 +14,7 @@
    height="990"
    id="svg2"
    version="1.1"
-   inkscape:version="0.47pre4 r22446"
+   inkscape:version="0.48.1 r9760"
    sodipodi:docname="usecase1.pdf">
   <defs
      id="defs4">
@@ -87,13 +87,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="389.47978"
-     inkscape:cy="526.45133"
+     inkscape:cx="-91.179298"
+     inkscape:cy="594.62379"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1127"
+     inkscape:window-width="2560"
+     inkscape:window-height="1523"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
@@ -125,7 +125,7 @@
      id="layer1"
      transform="translate(0,-62.36218)">
     <path
-       style="fill:#f7f7f7;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       style="fill:#ebebf6;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
        d="m 320.06659,192.36218 c -63.06595,0 -116.12391,26.70965 -131.76331,63.00121 -25.3427,15.46824 -41.07831,37.0442 -41.07831,60.91973 0,22.84346 14.39638,43.58819 37.83753,58.88664 9.63132,41.16453 66.40047,72.77935 135.00409,72.77935 29.31437,0 56.47637,-5.76475 78.71685,-15.58693 72.60411,-1.94265 130.51248,-39.28987 130.51248,-85.09883 0,-10.92693 -3.29284,-21.38037 -9.29592,-30.98023 6.00308,-9.59987 9.29592,-20.05331 9.29592,-30.98024 0,-47.05225 -61.0925,-85.19564 -136.45391,-85.19564 -4.82784,0 -9.60083,0.15447 -14.29923,0.45986 -17.72529,-5.25764 -37.54689,-8.20492 -58.47619,-8.20492 z"
        id="path3142" />
     <text
@@ -341,21 +341,10 @@
          style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'">publish</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#EmptyTriangleOutL)"
-       d="m 580,442.36218 -185,-70"
+       d="M 601.92031,373.41927 395,372.36218"
        id="path5449"
-       sodipodi:nodetypes="cc" />
-    <text
-       id="text5451"
-       y="205.76796"
-       x="611.36523"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Cambria;-inkscape-font-specification:Cambria"
-       xml:space="preserve"
-       transform="matrix(0.92828291,0.37187476,-0.37187476,0.92828291,0,0)"><tspan
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'"
-         y="205.76796"
-         x="611.36523"
-         id="tspan5453"
-         sodipodi:role="line">publish</tspan></text>
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0" />
     <path
        id="path5459"
        d="m 498.97762,473.55365 a 14.931477,14.931478 0 1 1 -29.86295,0 14.931477,14.931478 0 1 1 29.86295,0 z"
@@ -396,15 +385,10 @@
          style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'"
          y="536.36218"
          x="162"
-         id="tspan5478"
-         sodipodi:role="line">LaTeX</tspan><tspan
-         style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'"
-         y="576.36218"
-         x="162"
          sodipodi:role="line"
          id="tspan5480">Document</tspan><tspan
          style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'"
-         y="616.36218"
+         y="576.36218"
          x="162"
          sodipodi:role="line"
          id="tspan5980">Mashup</tspan></text>
@@ -510,7 +494,7 @@
        height="39.999996"
        width="190"
        id="rect5520"
-       style="fill:#828282;fill-opacity:1;stroke:#000000;stroke-width:0.99999994000000003;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+       style="fill:#eae385;fill-opacity:1;stroke:#000000;stroke-width:0.99999994000000003;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Cambria;-inkscape-font-specification:Cambria"
@@ -521,7 +505,7 @@
          id="tspan5536"
          x="174.98535"
          y="789.16882"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'">Annotation</tspan></text>
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,';stroke:none">Annotation</tspan></text>
     <path
        sodipodi:nodetypes="cc"
        id="path5550"
@@ -535,8 +519,9 @@
     <path
        sodipodi:nodetypes="cc"
        id="path5928"
-       d="m 420,312.36218 20,230"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:none" />
+       d="M 440.32932,302.81624 440,542.36218"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:none"
+       inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Cambria;-inkscape-font-specification:Cambria"
@@ -556,16 +541,16 @@
    id="tspan5936"
    style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'">download</tspan></textPath></text>
     <text
-       transform="matrix(0.11555799,0.99330074,-0.99330074,0.11555799,0,0)"
+       transform="matrix(0.99996885,0.00789245,-0.00789245,0.99996885,0,0)"
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Cambria;-inkscape-font-specification:Cambria"
-       x="490.30319"
-       y="-366.4917"
+       x="448.1232"
+       y="445.52725"
        id="text5938"><tspan
          sodipodi:role="line"
          id="tspan5940"
-         x="490.30319"
-         y="-366.4917"
+         x="448.1232"
+         y="445.52725"
          style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'">download</tspan></text>
     <path
        sodipodi:nodetypes="cc"
@@ -650,18 +635,19 @@
          id="tspan5988">Checking Tool</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#EmptyTriangleOutL)"
-       d="m 480,602.36218 0,30"
+       d="m 464,597.40202 0,40.96016"
        id="path5990"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0" />
     <text
        id="text5992"
-       y="617.36218"
-       x="485"
+       y="623.36218"
+       x="469"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Cambria;-inkscape-font-specification:Cambria"
        xml:space="preserve"><tspan
          style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'"
-         y="617.36218"
-         x="485"
+         y="623.36218"
+         x="469"
          id="tspan5994"
          sodipodi:role="line">run compliance checking tool</tspan></text>
     <path
@@ -698,22 +684,8 @@
        sodipodi:cy="482.15625"
        sodipodi:rx="0.84375"
        sodipodi:ry="0.875"
-       d="m 443,482.15625 a 0.84375,0.875 0 1 1 -1.6875,0 0.84375,0.875 0 1 1 1.6875,0 z"
+       d="m 443,482.15625 c 0,0.48325 -0.37776,0.875 -0.84375,0.875 -0.46599,0 -0.84375,-0.39175 -0.84375,-0.875 0,-0.48325 0.37776,-0.875 0.84375,-0.875 0.46599,0 0.84375,0.39175 0.84375,0.875 z"
        transform="translate(-2.4375,59.95593)" />
-    <path
-       sodipodi:nodetypes="cc"
-       id="path6008"
-       d="m 510,502.36218 c 120,0 120,55 122.63456,130.49896"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:none;marker-start:url(#EmptyTriangleInL)" />
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Cambria;-inkscape-font-specification:Cambria"
-       id="text6010"
-       transform="translate(2,-8)"><textPath
-         xlink:href="#path6008"
-         id="textPath6769"><tspan
-   style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'"
-   id="tspan6012">receive feedback on compliance</tspan></textPath></text>
     <g
        id="g4151"
        transform="matrix(0.83323902,0,0,0.83323902,112.81642,189.18743)">
@@ -896,5 +868,34 @@
          style="fill:#231f20;fill-opacity:1;fill-rule:evenodd;stroke:none"
          id="path4245" />
     </g>
+    <text
+       id="text5451"
+       y="41.309036"
+       x="746.50262"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Cambria;-inkscape-font-specification:Cambria"
+       xml:space="preserve"
+       transform="matrix(0.73935286,0.67331816,-0.67331816,0.73935286,0,0)"><tspan
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'"
+         y="41.309036"
+         x="746.50262"
+         id="tspan5453"
+         sodipodi:role="line">feedback on compliance</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       id="path3162"
+       d="M 626.77656,633.83887 490.59986,507.12613"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#EmptyTriangleOutL)"
+       inkscape:connector-curvature="0" />
+    <text
+       id="text3195"
+       y="383.88226"
+       x="538.80762"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Cambria;-inkscape-font-specification:Cambria"
+       xml:space="preserve"><tspan
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman,'"
+         y="383.88226"
+         x="538.80762"
+         id="tspan3197"
+         sodipodi:role="line">publish</tspan></text>
   </g>
 </svg>
