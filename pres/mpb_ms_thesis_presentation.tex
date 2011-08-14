@@ -5,7 +5,7 @@
 \usepackage{eulervm}
 \usepackage{listings}
 \usepackage{courier}
-\usepackage{xmpincl}  % http://www.ctan.org/tex-archive/macros/latex/contrib/xmpincl/
+%\usepackage{xmpincl}  % http://www.ctan.org/tex-archive/macros/latex/contrib/xmpincl/
 \usepackage{listings}
 %\includexmp{byncsa}
 \usepackage[binary,amssymb]{SIunits}
@@ -15,11 +15,18 @@
 \usecolortheme{lily}
 \useoutertheme{infolines}
 \setbeamertemplate{navigation symbols}{}
+\usepackage{xmpmulti}
 
 \newcommand{\mytitle}{Making Creative Commons More Useful by Applying Usage Management}
 \newcommand{\myshorttitle}{CC More Useful with Usage Managment}
 \newcommand{\myauthor}{Matthew Paul Bohnsack}
 \newcommand{\myshortauthor}{Matthew Bohnsack}
+
+% We should look for graphics in these directories
+\graphicspath{
+{../resources/usecases/usecase1/}
+{../resources/usecases/usecase2/}
+}
 
 % Check this for automating the creation of different files: slides, handouts, etc...
 % http://www.pletscher.org/writings/latex/Makefile
@@ -57,13 +64,13 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Creative Commons}
+\section{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[t]
     \tableofcontents[currentsection,hideallsubsections]
 \end{frame}
 
-    \subsection{Overview}
+    \subsection{Creative Commons}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[t]
         \frametitle{Overview}
@@ -97,418 +104,18 @@
     \begin{frame}[t]
         \frametitle{Use Case \#1}
         \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step27.pdf}
+            % The "[<+>]" thing means totally replace the prior graphic each
+            % time.  Otherwise the default behavior is to stack all graphics
+            % on top of each other.
+            \multiinclude[<+>][format=pdf,graphics={width=0.51\textwidth}]{usecase1}
         \end{center}
     \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step01.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step02.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step03.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step04.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step05.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step06.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step07.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step08.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step09.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step10.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step11.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step12.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step13.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step14.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step15.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step16.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step17.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step18.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step19.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step20.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step21.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step22.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step23.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step24.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step25.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step26.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#1}
-        \begin{center}
-            \includegraphics[width=0.51\textwidth]{../resources/usecases/usecase1/usecase1-step27.pdf}
-        \end{center}
-    \end{frame}
-
 
     % Use Case #2 %%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[t]
         \frametitle{Use Case \#2}
         \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step40.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step01.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step02.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step03.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step04.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step05.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step06.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step07.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step08.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step09.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step10.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step11.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step12.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step13.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step14.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step15.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step16.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step17.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step18.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step19.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step20.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step21.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step22.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step23.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step24.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step25.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step26.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step27.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step28.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step29.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step30.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step31.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step32.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step33.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step34.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step35.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step36.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step37.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step38.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step39.pdf}
-        \end{center}
-    \end{frame}
-    \begin{frame}[t]
-        \frametitle{Use Case \#2}
-        \begin{center}
-            \includegraphics[width=0.9\textheight]{../resources/usecases/usecase2/usecase2-step40.pdf}
+            \multiinclude[<+>][format=pdf,graphics={width=0.9\textheight}]{usecase2}
         \end{center}
     \end{frame}
 
