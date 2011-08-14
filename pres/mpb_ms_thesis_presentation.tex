@@ -6,7 +6,7 @@
 \usepackage{listings}
 \usepackage{courier}
 %\usepackage{xmpincl}  % http://www.ctan.org/tex-archive/macros/latex/contrib/xmpincl/
-\usepackage{listings}
+%\usepackage{listings}
 %\includexmp{byncsa}
 \usepackage[binary,amssymb]{SIunits}
 \usefonttheme{structurebold}
@@ -15,7 +15,7 @@
 \usecolortheme{lily}
 \useoutertheme{infolines}
 \setbeamertemplate{navigation symbols}{}
-\usepackage{xmpmulti}
+\usepackage{xmpmulti} % for \multiinclude
 
 \newcommand{\mytitle}{Making Creative Commons More Useful by Applying Usage Management}
 \newcommand{\myshorttitle}{CC More Useful with Usage Managment}
@@ -26,6 +26,7 @@
 \graphicspath{
 {../resources/usecases/usecase1/}
 {../resources/usecases/usecase2/}
+{../resources/component-design/}
 }
 
 % Check this for automating the creation of different files: slides, handouts, etc...
@@ -47,8 +48,7 @@
 
 \newcommand{\putat}[3]{\begin{picture}(0,0)(0,0)\put(#1,#2){#3}\end{picture}}
 
-
-\lstset{language=bash,rulesepcolor=\color{Gray},frame=shadowbox,basicstyle=\tiny\ttfamily}
+%\lstset{language=bash,rulesepcolor=\color{Gray},frame=shadowbox,basicstyle=\tiny\ttfamily}
 
 \begin{document}
 
@@ -62,7 +62,6 @@
     \end{center}
 \end{frame}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,24 +69,40 @@
     \tableofcontents[currentsection,hideallsubsections]
 \end{frame}
 
+    \subsection{Abstract}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Abstract}
+    \end{frame}
+
+    \subsection{Motiviation}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Motiviation}
+    \end{frame}
+
     \subsection{Creative Commons}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[t]
-        \frametitle{Overview}
-        \begin{itemize}
-            \item Blarg
-            \item foo
-            \item bar
-        \end{itemize}
+        \frametitle{Creative Commons}
     \end{frame}
 
+    \subsection{XMP}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[t]
-        \frametitle{Overview (cont.)}
-        \begin{itemize}
-            \item a
-            \item b
-            \item c
-        \end{itemize}
+        \frametitle{XMP}
+    \end{frame}
+
+    \subsection{Flickr}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Flickr}
+    \end{frame}
+
+    \subsection{Usage Management}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Usage Management}
     \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -118,5 +133,63 @@
             \multiinclude[<+>][format=pdf,graphics={width=0.9\textheight}]{usecase2}
         \end{center}
     \end{frame}
+
+    \subsection{Component Design}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % Compliance Checking Tool %%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Compliance Checking Tool}
+        \begin{center}
+            \includegraphics[width=0.9\textheight]{compliance-checking-tool.pdf}
+        \end{center}
+    \end{frame}
+
+    % License Reasoning Engine %%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{License Reasoning Engine}
+    \end{frame}
+
+    % CC+ Broker Service %%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{CC+ Broker Service}
+    \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Implementation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]
+    \tableofcontents[currentsection,hideallsubsections]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Future Work}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]
+    \tableofcontents[currentsection,hideallsubsections]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]
+    \tableofcontents[currentsection,hideallsubsections]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{References}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]
+    \tableofcontents[currentsection,hideallsubsections]
+\end{frame}
+
+%%%%%%%%%%%% Thanks and Questions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}[t]
+%     \frametitle{Thanks!, Questions?}
+%     \begin{itemize}
+%         \item Thanks!
+%         \item Questions?
+%     \end{itemize}
+% \end{frame}
 
 \end{document}
