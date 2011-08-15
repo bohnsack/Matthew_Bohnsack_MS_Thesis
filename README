@@ -2,6 +2,7 @@ Matthew Bohnsack's MS Thesis
 ===============================================================================================
 
 README ------------------------ this file
+code -------------------------- implementation
 misc -------------------------- miscellaneous things, including a work log spreadsheet
 paper ------------------------- source files for paper, based on thesis research
 paper/mpb_ms_thesis_paper.pdf - the actual typeset paper
