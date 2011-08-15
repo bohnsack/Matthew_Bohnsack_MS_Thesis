@@ -18,10 +18,20 @@ TODO:
       from a CC source that isn't cited.  Need to find exact source and provide
       citation, if similar words/descriptions are used in final
       paper/thesis/presentation.
-    - literature search for CC compliance checking tools
+    - literature search for CC compliance checking tools (there probably are some)
     - Have Makefile automatically take Inkscape SVG and convert it to PDF on
       the command line and have these conversions be a dependency for rebuild
       of top-level projects.
+Mon 2011-08-15:
+    * Start implementing LaTeX document parser
+    * Add code directory for implementation
+Sun 2011-08-14:
+    * Add compliance checking tool diagram and more progress on presentation outline
+    * Change usecase diagrams to work with \multiinclude{}, so we have animation like stuff on a single slide number
+Sat 2011-08-13:
+    * Add two usecase flows to presentation
+    * Add diagrams for usecase2, including step-by-step PDFs
+    * Make multiple layers for usecase1 and add step-by-step PDFs
 Sun 2011-08-07:
     - more work on use cases (see below)
     - Created Inkscape SVG/PDF usecase diagram for usecase #1
