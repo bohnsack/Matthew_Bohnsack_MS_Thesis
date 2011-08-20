@@ -1,14 +1,12 @@
 \documentclass[mathserif,xcolor=dvipsnames,hyperref={bookmarks=true}]{beamer}
 %\documentclass[mathserif,xcolor=dvipsnames,handout]{beamer}
-%\usepackage{listings}
 \usepackage[scaled]{helvet}
 \usepackage{eulervm}
-\usepackage{listings}
 \usepackage{courier}
+\usepackage{listings}
 %\usepackage{xmpincl}  % http://www.ctan.org/tex-archive/macros/latex/contrib/xmpincl/
-%\usepackage{listings}
 %\includexmp{byncsa}
-\usepackage[binary,amssymb]{SIunits}
+%\usepackage[binary,amssymb]{SIunits}
 \usefonttheme{structurebold}
 \usecolortheme[named=Maroon]{structure}
 \usetheme{Antibes}
@@ -18,17 +16,43 @@
 \usepackage{xmpmulti} % for \multiinclude
 
 \newcommand{\mytitle}{Making Creative Commons More Useful by Applying Usage Management}
-\newcommand{\myshorttitle}{CC More Useful with Usage Managment}
+\newcommand{\myshorttitle}{CC More Useful with Usage Management}
 \newcommand{\myauthor}{Matthew Paul Bohnsack}
 \newcommand{\myshortauthor}{Matthew Bohnsack}
 
 % We should look for graphics in these directories
 \graphicspath{
+{resources/logos/UNM/}
 {../resources/usecases/usecase1/}
 {../resources/usecases/usecase2/}
 {../resources/component-design/}
 {../resources/flickr/}
+{../resources/cc/}
 {../resources/pdfviewer/}
+}
+
+% Settings for code/text listings
+\lstset{ %
+basicstyle=\tiny\ttfamily,       % the size of the fonts that are used for the code and the font
+%numbers=left,                   % where to put the line-numbers
+%numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+%stepnumber=2,                   % the step between two line-numbers. If it's 1, each line 
+                                 % will be numbered
+%numbersep=5pt,                  % how far the line-numbers are from the code
+%backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=shadowbox,                   % adds a frame around the code
+rulesepcolor=\color{Gray},
+tabsize=2,                      % sets default tabsize to 2 spaces
+%captionpos=b,                   % sets the caption-position to bottom
+breaklines=true,                % sets automatic line breaking
+breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+%title=\lstname,                 % show the filename of files included with \lstinputlisting;
+%                                % also try caption instead of title
+%escapeinside={\%*}{*)},         % if you want to add a comment within your code
+%morekeywords={*,...}            % if you want to add more keywords to the set
 }
 
 % Check this for automating the creation of different files: slides, handouts, etc...
@@ -54,22 +78,30 @@
 
 \begin{document}
 
+\AtBeginSection[]
+{
+\begin{frame}{Table of Contents}
+\tableofcontents[currentsection,hideothersubsections]
+\end{frame}
+}
+
+% make covered bullet points sill show up, but muted
+\setbeamercovered{transparent=7}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
     \titlepage
     \begin{center}
-        \includegraphics[width=0.24\textwidth]{resources/logos/UNM/UNM_logo_PMS200C.pdf}
+        \includegraphics[width=0.24\textwidth]{UNM_logo_PMS200C.pdf}
     \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]
-    \tableofcontents[currentsection,hideallsubsections]
-\end{frame}
 
     \subsection{Abstract}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,23 +109,310 @@
         \frametitle{Abstract}
     \end{frame}
 
-    \subsection{Motiviation}
+    \subsection{Motivation}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[t]
-        \frametitle{Motiviation}
+        \frametitle{Motivation}
+        \begin{itemize}
+            \item<2-> Creative Commons is being used more and more
+            \item<3-> Easy to find images on the web licensed under different CC licenses
+            \item<4-> Very easy to make a mash-up document containing ``found images''
+            \item<5-> Not so easy to make sure you're following all the rules when
+                  you create derivative works (mash-ups)
+            \item<6-> Is your intended use 100\% compliant with dozens or hundreds
+                  of assets you're using, each of which might have a slightly different
+                  Creative Commons license?
+            \item<7-> If an asset you want to use has a license incompatible with
+                  your intended use, is there an easy way for you to acquire an alternative
+                  license that lets you use the asset in the way you want to?
+            \item<8-> Doing this sort of thing today is pretty difficult
+            \item<9-> Adding some automated machine reasoning to the process could
+                  make it all much easier and possibly make the proper use of combined CC content
+                  a more widespread practice
+        \end{itemize}
     \end{frame}
 
     \subsection{Creative Commons}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
     \begin{frame}[t]
-        \frametitle{Creative Commons}
+        \frametitle{Creative Commons Overview}
+        \begin{itemize}
+            \item<2-> Creative commons is a nonprofit organization that works to
+                  increase the amount of creativity available in ``the commons''
+            \item<3-> Provides free, easy-to-use legal tools that provide a simple,
+                  standardized way to pre-clear usage rights to creative work for
+                  copyright owners
+            \item<4-> Lets copyright holders easily change from default of ``all
+                  rights reserved'' to ``some rights reserved''
+            \item<5-> Not an alternative to copyright
+            \item<6-> Applies on top of copyright
+            \item<7-> Guidelines for marking text, images, audio, and video
+            \item<8-> Guidelines for publishing via a file sharing network or
+                  social networking site
+            \item<9-> Some support for embedding license information as meta-data
+                  within digital files
+        \end{itemize}
     \end{frame}
 
-    \subsection{XMP}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[t]
-        \frametitle{XMP}
+        \frametitle{Creative Commons Overview (cont.)}
+        \begin{itemize}
+            \item<2-> Not changeable or revocable
+            \item<3-> I.e., once someone has received a copy, the work is
+                  perpetually licensed under the license it was received under
+            \item<4-> View is always permissible under CC
+            \item<5-> Non-exclusive licenses possible
+        \end{itemize}
     \end{frame}
+
+    \begin{frame}[t]
+        \frametitle{CC Licenses Have Three Layers}
+            \begin{itemize}
+                \item<2-> Machine Readable (CC Rights Expression Language - CC REL)
+                \item<3-> Human Readable (Commons Deed)
+                \item<4-> Legal Code (Lawyer Readable)
+            \end{itemize}
+        \begin{center}
+          \includegraphics[width=0.4\textwidth]{license_layers.png}
+        \end{center}
+    \end{frame}
+
+     \begin{frame}[t]
+         \frametitle{Creative Commons Licenses}
+         \begin{itemize}
+             \item<2-> Six licenses are provided by CC, not including the
+             complications of locale-specific licenses, license versions, or
+             CC0 (Public Domain ``no rights reserved'')
+             \begin{enumerate}
+               \item<3-> \includegraphics[width=0.1\textwidth]{by.pdf}\ Attribution
+               / CC BY
+               \item<4-> \includegraphics[width=0.1\textwidth]{by_sa.pdf}\
+               Attribution-ShareAlike / CC BY-SA
+               \item<5-> \includegraphics[width=0.1\textwidth]{by_nd.pdf}\
+               Attribution-NoDerivs / CC BY-ND
+               \item<6-> \includegraphics[width=0.1\textwidth]{by_nc.pdf}\
+               Attribution-NonCommercial / CC BY-NC
+               \item<7-> \includegraphics[width=0.1\textwidth]{by_nc_sa.pdf}\
+               Attribution-NonCommercial-ShareAlike / CC BY-NC-SA
+               \item<8-> \includegraphics[width=0.1\textwidth]{by_nc_nd.pdf}\
+               Attribution-NonCommercial-NoDerivs / CC BY-NC-ND
+             \end{enumerate}
+             \item<9-> Non-exclusive licenses, yielding CC+:
+             \texttt{http://wiki.creativecommons.org/CCPlus} \\
+               \includegraphics[width=0.1\textwidth]{by_nc_sa.pdf}
+               +\includegraphics[width=0.1\textwidth]{CommercialLicenseButton.pdf}
+         \end{itemize}
+     \end{frame}
+     % https://creativecommons.org/about/downloads
+
+    % 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Attribution}
+        \includegraphics[width=0.1\textwidth]{by.pdf}\  This license lets
+        others distribute, remix, tweak, and build upon your work, even
+        commercially, as long as they credit you for the original creation.
+        This is the most accommodating of the licenses offered.  Recommended
+        for maximum dissemination and use of licensed materials.
+        \vspace{0.1in}
+        \begin{itemize}
+            \item You are free:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{share.pdf}\
+                \textbf{to Share} -- to copy, distribute, and transmit the work
+                \item \includegraphics[width=0.03\textwidth]{remix.pdf}\
+                \textbf{to Remix} -- to adapt the work
+            \end{itemize}
+            \item Under the following conditions:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{bigby.pdf}\
+                \textbf{Attribution} -- You must attribute the work in the
+                manner specified by the author or licensor (but not in any way
+                that suggests that they endorse you or your use of the work).
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    % 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Attribution-ShareAlike}
+        \includegraphics[width=0.1\textwidth]{by_sa.pdf}\ This
+        license lets others remix, tweak, and build upon your work even for
+        commercial purposes, as long as they credit you and license their new
+        creations under the identical terms. This license is often compared to
+        free and open source software licenses. All new works based on yours
+        will carry the same license, so any derivatives will also allow
+        commercial use.
+        \vspace{0.1in}
+        \begin{itemize}
+            \item You are free:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{share.pdf}\
+                \textbf{to Share} -- to copy, distribute, and transmit the work
+                \item \includegraphics[width=0.03\textwidth]{remix.pdf}\
+                \textbf{to Remix} -- to adapt the work
+            \end{itemize}
+            \item Under the following conditions:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{bigby.pdf}\
+                \textbf{Attribution} -- You must attribute the work in the
+                manner specified by the author or licensor (but not in any way
+                that suggests that they endorse you or your use of the work).
+                \item \includegraphics[width=0.03\textwidth]{sa.pdf}\
+                \textbf{Share Alike} -- If you alter, transform, or build upon
+                this work, you may distribute the resulting work only under the
+                same or similar license to this one.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    % 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Attribution-NoDerivs}
+        \includegraphics[width=0.1\textwidth]{by_nd.pdf}\ This
+        license allows for redistribution, commercial and non-commercial, as long as it
+        is passed along unchanged and in whole, with credit to you.
+        \vspace{0.1in}
+        \begin{itemize}
+            \item You are free:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{share.pdf}\
+                \textbf{to Share} -- to copy, distribute, and transmit the work
+            \end{itemize}
+            \item Under the following conditions:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{bigby.pdf}\
+                \textbf{Attribution} -- You must attribute the work in the
+                manner specified by the author or licensor (but not in any way
+                that suggests that they endorse you or your use of the work).
+                \item \includegraphics[width=0.03\textwidth]{nd.pdf}\
+                \textbf{No Derivative Works} -- You may not alter, transform,
+                or build upon this work.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    % 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Attribution-NonCommercial}
+        \includegraphics[width=0.1\textwidth]{by_nc.pdf}\ This license lets
+        others remix, tweak, and build upon your work non-commercially, and
+        although their new works must also acknowledge you and be
+        non-commercial, they don't have to license their derivative works on
+        the same terms.
+        \vspace{0.1in}
+        \begin{itemize}
+            \item You are free:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{share.pdf}\
+                \textbf{to Share} -- to copy, distribute, and transmit the work
+                \item \includegraphics[width=0.03\textwidth]{remix.pdf}\
+                \textbf{to Remix} -- to adapt the work
+            \end{itemize}
+            \item Under the following conditions:
+            \begin{itemize}
+                \item
+                \includegraphics[width=0.03\textwidth]{bigby.pdf}\
+                \textbf{Attribution} -- You must attribute the work in the
+                manner specified by the author or licensor (but not in any way
+                that suggests that they endorse you or your use of the work).
+                \item \includegraphics[width=0.03\textwidth]{nc.pdf}\
+                \textbf{Noncommercial} -- You may not use this work for
+                commercial purposes.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    % 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Attribution-NonCommercial-ShareAlike}
+        \includegraphics[width=0.1\textwidth]{by_nc_sa.pdf}\ This license lets
+        others remix, tweak, and build upon your work non-commercially, as long
+        as they credit you and license their new creations under the identical
+        terms.
+        \vspace{0.1in}
+        \begin{itemize}
+            \item You are free:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{share.pdf}\
+                \textbf{to Share} -- to copy, distribute, and transmit the work
+                \item \includegraphics[width=0.03\textwidth]{remix.pdf}\
+                \textbf{to Remix} -- to adapt the work
+            \end{itemize}
+            \item Under the following conditions:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{bigby.pdf}\
+                \textbf{Attribution} -- You must attribute the work in the
+                manner specified by the author or licensor (but not in any way
+                that suggests that they endorse you or your use of the work).
+                \item \includegraphics[width=0.03\textwidth]{nc.pdf}\
+                \textbf{Noncommercial} -- You may not use this work for
+                commercial purposes.
+                \item \includegraphics[width=0.03\textwidth]{sa.pdf}\
+                \textbf{Share Alike} -- If you alter, transform, or build upon
+                this work, you may distribute the resulting work only under the
+                same or similar license to this one.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    % 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[t]
+        \frametitle{Attribution-NonCommercial-NoDerivs}
+        \includegraphics[width=0.1\textwidth]{by_nc_nd.pdf}\ This license is
+        the most restrictive of the six main licenses, only allowing others to
+        download your works and share them with others as long as they credit
+        you, but they can't change them in any way or use them commercially.
+        \vspace{0.1in}
+        \begin{itemize}
+            \item You are free:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{share.pdf}\
+                \textbf{to Share} -- to copy, distribute, and transmit the work
+            \end{itemize}
+            \item Under the following conditions:
+            \begin{itemize}
+                \item \includegraphics[width=0.03\textwidth]{bigby.pdf}\
+                \textbf{Attribution} -- You must attribute the work in the
+                manner specified by the author or licensor (but not in any way
+                that suggests that they endorse you or your use of the work).
+                \item \includegraphics[width=0.03\textwidth]{nc.pdf}\
+                \textbf{Noncommercial} -- You may not use this work for
+                commercial purposes.
+                \item \includegraphics[width=0.03\textwidth]{nd.pdf}\
+                \textbf{No Derivative Works} -- You may not alter, transform,
+                or build upon this work.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[t]
+        \frametitle{CC REL}
+        \begin{itemize}
+            \item The Creative Commons Rights Expression Language
+            \item RDFa (Resource Description Framework in attributes) for HTML
+            Web pages and resources referenced therein
+            \item XMP (Extensible Metadata Platform) for stand-alone media
+            \item \texttt{http://wiki.creativecommons.org/CC\_REL}
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}[fragile]
+\frametitle{RDFa for HTML}
+\lstinputlisting[language=HTML]{../listings/RDFaExample.html}
+\end{frame}
+
+    \begin{frame}[t]
+        \frametitle{XMP for Stand-Alone Media}
+        \begin{itemize}
+            \item \LaTeX\ package on CTAN (\texttt{xmpincl})
+        \end{itemize}
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{embedded_xmp.png}
+        \end{center}
+    \end{frame}
+
+
 
     \subsection{Flickr}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -191,21 +510,24 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[t]
         \frametitle{Usage Management}
+        \begin{itemize}
+            \item<2-> AAA aAAAA aaaaa AAAAAAAAAA
+            \item<3-> Bb bb b b BBBBBBBBBB bbbBB
+            \item<4-> c CCCC ccCCC ccc cCCCcCc C
+        \end{itemize}
     \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{System Design}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]
-    \tableofcontents[currentsection,hideallsubsections]
-\end{frame}
 
     \subsection{Use Cases}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     % Use Case #1 %%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[t]
-        \frametitle{Use Case \#1}
+        \setbeamercovered{invisible}
+        \frametitle{Use Case \#1: Simple Use}
         \begin{center}
             % The "[<+>]" thing means totally replace the prior graphic each
             % time.  Otherwise the default behavior is to stack all graphics
@@ -216,7 +538,8 @@
 
     % Use Case #2 %%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[t]
-        \frametitle{Use Case \#2}
+        \setbeamercovered{invisible}
+        \frametitle{Use Case \#2: Including the CC+ Broker Service}
         \begin{center}
             \multiinclude[<+>][format=pdf,graphics={width=0.9\textheight}]{usecase2}
         \end{center}
@@ -229,55 +552,63 @@
     \begin{frame}[t]
         \frametitle{Compliance Checking Tool}
         \begin{center}
-            \includegraphics[width=0.9\textheight]{compliance-checking-tool.pdf}
+            \includegraphics[width=0.8\textwidth]{compliance-checking-tool.pdf}
         \end{center}
     \end{frame}
 
     % License Reasoning Engine %%%%%%%%%%%%
     \begin{frame}[t]
         \frametitle{License Reasoning Engine}
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{todo.pdf}
+        \end{center}
     \end{frame}
 
     % CC+ Broker Service %%%%%%%%%%%%%%%%%%
     \begin{frame}[t]
         \frametitle{CC+ Broker Service}
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{todo.pdf}
+        \end{center}
     \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Implementation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]
-    \tableofcontents[currentsection,hideallsubsections]
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Future Work}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]
-    \tableofcontents[currentsection,hideallsubsections]
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]
-    \tableofcontents[currentsection,hideallsubsections]
-\end{frame}
+    \subsection{Conclusions}
+    \begin{frame}[t]
+        \frametitle{Conclusions}
+        \begin{itemize}
+            \item<2-> AAA aAAAA aaaaa AAAAAAAAAA
+            \item<3-> Bb bb b b BBBBBBBBBB bbbBB
+            \item<4-> c CCCC ccCCC ccc cCCCcCc C
+        \end{itemize}
+    \end{frame}
+
+    \subsection{Thanks!, Questions?}
+    \begin{frame}[t]
+        \frametitle{Thanks!, Questions?}
+        \begin{itemize}
+            \item<2-> Thanks!
+            \item<3-> Questions?
+        \end{itemize}
+    \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{References}
+\section*{References}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[t]
-    \tableofcontents[currentsection,hideallsubsections]
+    \frametitle{References}
 \end{frame}
 
 %%%%%%%%%%%% Thanks and Questions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{frame}[t]
-%     \frametitle{Thanks!, Questions?}
-%     \begin{itemize}
-%         \item Thanks!
-%         \item Questions?
-%     \end{itemize}
-% \end{frame}
 
 \end{document}
