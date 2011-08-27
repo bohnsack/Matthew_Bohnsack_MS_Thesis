@@ -43,6 +43,7 @@ class LaTeXDocument
     @fname  = fname
     @images = Array.new
     @annotation = Annotation.new
+    @dir = File.dirname(@fname)
   end
 
   # Given a file handle to a LaTeX file, go through the file, looking for image
@@ -58,6 +59,7 @@ class LaTeXDocument
     target_exts = %w{jpg png}
 
     # TODO: need to catch file open exceptions
+    puts "MPB: #{@dir}"
     f = File.open(@fname, "r")
 
     f.each_line do |line|
@@ -65,9 +67,10 @@ class LaTeXDocument
         target_exts.each do |ext|
           if m = line.match(/\{(.+\.#{ext})\}/)
             image_filename = m[1]
+            # prepend relative path, if image file name doesn't start with a "/"
+            image_filename = "#{@dir}/#{image_filename}" if !image_filename.match(/^\//)
             # TODO catch exceptions
-            #@images << Image.new(image_filename)
-            puts image_filename
+            @images << Image.new(image_filename)
           end
         end
       end
