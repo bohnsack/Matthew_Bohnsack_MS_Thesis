@@ -20,15 +20,17 @@ class Image
     @photo = MiniExiftool.new fname
   end
 
+  attr_reader :photo, :fname
+
   def license
     @photo.License
   end
 
-  def attribution_name
+  def attr_name
     @photo.AttributionName
   end
 
-  def attribution_url
+  def attr_url
     @photo.AttributionURL
   end
 end
@@ -39,12 +41,16 @@ end
 
 # LaTeX Document Parser
 class LaTeXDocument
+
   def initialize(fname)
     @fname  = fname
     @images = Array.new
     @annotation = Annotation.new
     @dir = File.dirname(@fname)
+    parse
   end
+
+  attr_reader :fname, :images, :annotation, :dir
 
   # Given a file handle to a LaTeX file, go through the file, looking for image
   # files.  For each file that's found, get an Image object and add that object
@@ -59,11 +65,10 @@ class LaTeXDocument
     target_exts = %w{jpg png}
 
     # TODO: need to catch file open exceptions
-    puts "MPB: #{@dir}"
     f = File.open(@fname, "r")
 
     f.each_line do |line|
-      if line.match(/includegraphics/)
+      if line.match(/includegraphics/) && !line.match(/%.+includegraphics/)
         target_exts.each do |ext|
           if m = line.match(/\{(.+\.#{ext})\}/)
             image_filename = m[1]
