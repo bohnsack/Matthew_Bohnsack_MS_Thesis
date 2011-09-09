@@ -10,7 +10,42 @@ require 'mini_exiftool'
 ##########################################################################
 
 class Annotation
-  def initialize
+  attr_reader :lic, :attr_name, :attr_url, :commercial_use
+  def initialize(fname)
+
+    debug = false
+
+    @lic            = ""
+    @attr_name      = ""
+    @attr_url       = ""
+    @commercial_use = ""
+
+    # Example annotation that this class extracts
+    #% CC-Lic: BY
+    #% CC-Attribution-Name: Matthew Bohnsack
+    #% CC-Attribution-URL: http://bohnsack.com/
+    #% CC-Commercial-Use: F
+
+    # TODO: need to catch file open exceptions
+    f = File.open(fname, "r")
+
+    f.each_line do |line|
+      if m = line.match(/%\s+CC-Lic: (.+)/)
+        @lic = m[1]
+        puts "CC-Lic: #{@lic}" if debug
+      elsif m = line.match(/%\s+CC-Attribution-Name: (.+)/)
+        @attr_name = m[1]
+        puts "CC-Attribution-Name: #{@attr_name}" if debug
+      elsif m = line.match(/%\s+CC-Attribution-URL: (.+)/)
+        @attr_url = m[1]
+        puts "CC-Attribution-URL: #{@attr_url}" if debug
+      elsif m = line.match(/%\s+CC-Commercial-Use: (.+)/)
+        @commercial_use = m[1]
+        puts "CC-Commercial-Use: #{@commercial_use}" if debug
+      end
+    end
+
+    f.close
   end
 end
 
@@ -45,7 +80,7 @@ class LaTeXDocument
   def initialize(fname)
     @fname  = fname
     @images = Array.new
-    @annotation = Annotation.new
+    @annotation = Annotation.new(@fname)
     @dir = File.dirname(@fname)
     parse
   end
