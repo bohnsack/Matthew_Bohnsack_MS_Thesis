@@ -2,6 +2,7 @@
 # license and licenses of any embedded images
 # TODO: use proper rdoc
 
+require 'cc_licensed'
 require 'rubygems'
 require 'mini_exiftool'
 
@@ -50,9 +51,33 @@ class Annotation
 end
 
 class Image
+  include CCLicensed
   def initialize(fname)
     @fname = fname
     @photo = MiniExiftool.new fname
+
+    # We look via regex at the license URL that should be embedded in each
+    # image via XMP.  E.g., "http://creativecommons.org/licenses/by/3.0/" =>
+    # 'Attribution'
+    case @photo.License
+    when %r|/zero/|     # 0
+      @photo.set_lic 'PublicDomain'
+    when %r|/by/|       # 1
+      @photo.set_lic 'Attribution'
+    when %r|/by-sa/|    # 2
+      @photo.set_lic 'Attribution-ShareAlike'
+    when %r|/by-nd/|    # 3
+      @photo.set_lic 'Attribution-NoDerivs'
+    when %r|/by-nc/|    # 4
+      @photo.set_lic 'Attribution-NonCommercial'
+    when %r|/by-nc-sa/| # 6
+      @photo.set_lic 'Attribution-NonCommercial-ShareAlike'
+    when %r|/by-nc-nd/| # 7
+      @photo.set_lic 'Attribution-NonCommercial-NoDerives'
+    else
+      # TODO, what do we do when we can't determine the license type?
+      raise "Unsupported Creative Commons License Type"
+    end
   end
 
   attr_reader :photo, :fname

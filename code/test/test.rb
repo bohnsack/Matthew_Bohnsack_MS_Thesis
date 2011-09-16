@@ -1,6 +1,8 @@
 #!/usr/bin/ruby
 
-require '../lib/parsers.rb'
+$:.unshift File.join(%w{ ../lib })
+
+require 'parsers.rb'
 require 'pp'
 
 latex_test_docs = %w{documents/01/doc.tex}
