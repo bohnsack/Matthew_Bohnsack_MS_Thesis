@@ -68,19 +68,74 @@
       <pre>$ git clone git://github.com/bohnsack/Matthew_Bohnsack_MS_Thesis</pre>
     </p>
 
-    You can also directly download (unfinished and under-development) PDF versions of the <a href="https://github.com/bohnsack/Matthew_Bohnsack_MS_Thesis/blob/master/thesis/mpb_ms_thesis.pdf?raw=true">actual paper</a> and the <a href="https://github.com/bohnsack/Matthew_Bohnsack_MS_Thesis/blob/master/pres/mpb_ms_thesis_presentation.pdf?raw=true">presentation</a> used during the defense.
+    You can also directly download (unfinished and under-development) PDF versions of the <a href="https://github.com/bohnsack/Matthew_Bohnsack_MS_Thesis/blob/master/thesis/mpb_ms_thesis.pdf?raw=true">thesis</a> and <a href="https://github.com/bohnsack/Matthew_Bohnsack_MS_Thesis/blob/master/pres/mpb_ms_thesis_presentation.pdf?raw=true">thesis presentation</a>.
 
     <h2>Related Projects</h2>
     <p>
     During discussions held in <a
         href="http://www.ece.unm.edu/">UNM ECE</a> <a
-        href="http://informatics.ece.unm.edu/">informatics group</a> research meetings, we have
-    come up with at least three follow-on project ideas related to this work that might be used to by undergraduate and graduate students as a basis for their own projects:
+        href="http://informatics.ece.unm.edu/">informatics group</a> research
+    meetings, we have come up with at least three follow-on project ideas
+    related to this work that might be used to by undergraduate and graduate
+    students as a basis for their own projects:
     </p>
 
     <h3>1. Website to view, add, and/or edit CC license information embedded with XMP in various media: images, etc.</h3>
+
+    <p> This project could start at the undergraduate level and possibly move
+    to masters research, with the optional inclusion of more sophisticated
+    features such as the creation of and reasoning over mashup documents.  At
+    the undergraduate level, ideas for functionality, in rough implementation
+    order might include:</p>
+
+    <ul>
+        <li>A basic Ruby on Rails site</li>
+        <li>Users and authentication so different people can sign up for and
+        use the service.</li>
+        <li>Image upload, with images associated with a particular user, so
+        that a user can only see his images and can't see other peoples
+        images.</li>
+        <li>View a user's images in a list/grid or other collection and
+        individually, if you "drill in" to a particular image.</li>
+        <li>Implement the rest of the CRUD operations on a user's uploaded
+        images: Create (covered above), Read (covered above), Update (e.g.,
+        starting with edit of basic meta data like name), and Delete.</li>
+        <li>It needs to be easy for a user to "re-download" images they've
+        uploaded.</li>
+        <li>Add the ability to view CC license information embedded in XMP: CC
+        license type, attribution name, attribution URL.</li>
+        <li>Add the ability to change CC license information embedded in
+        XMP.</li>
+        <li>Note that for both view and change XMP data in images, I'm
+        currently using the mini_exiftool gem
+        (<a
+            href="http://miniexiftool.rubyforge.org/">http://miniexiftool.rubyforge.org/</a>)
+        that depends on the Perl-based exiftool (<a
+            href="http://www.sno.phy.queensu.ca/~phil/exiftool/">http://www.sno.phy.queensu.ca/~phil/exiftool/</a>)</li>
+        <li>Add support for different media types.  E.g., video files, PDF,
+        etc.</li>
+    </ul>
+
     <h3>2. Implementation and further exploration of the &quot;CC+ Broker Service&quot; concept</h3>
-    <h3>3. Mobile phone application that automatically embeds XMP CC license information into photos and video</h3>
+
+    <p>In my thesis, I'm just going to mention the possibility of something
+    like the CC+ Broker Service, but further work could examine things
+    like:</p>
+    <ul>
+        <li>A real implementation with all the details that go with this.</li>
+        <li>Is it a single service provided that everyone can use or is it a
+        protocol/API specification that anyone can use to implement their own
+        CC+ Broker Service?</li>
+        <li>What does the payment interface look like?</li>
+    </ul>
+
+    <h3>3. Mapping some of these ideas onto something to do with mobile
+        devices, perhaps with Rhomobile or similar</h3>
+
+    <p>This is an idea that isn't fleshed out to well at the moment, but one
+    that holds some promise. One idea is for a mobile phone application that
+    automatically embeds XMP CC license information into photos and video.  This 
+    would probably go much deeper than what is possible with Rhomobile.</p>
 
     <div align="center" style="border:1px solid #888; padding: 8px; font-size: 80%;">
     <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://bohnsack.github.com/" property="cc:attributionName" rel="cc:attributionURL">Matthew Bohnsack</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
