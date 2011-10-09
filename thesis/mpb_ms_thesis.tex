@@ -4,8 +4,9 @@
 \documentclass[botnum,fleqn,final]{unmeethesis}
 
 % Set Title and Author
-\newcommand{\mytitle}{Applying Metaprogramming and the ActiveRecord Design Pattern to Personal Health Records}
-\newcommand{\myauthor}{Matthew Paul Bohnasck}
+\newcommand{\mytitle}{Making Creative Commons More Useful with Usage Management}
+\newcommand{\myauthor}{Matthew Paul Bohnsack}
+
 
 % Font settings:
 \usepackage[T1]{fontenc}
@@ -18,6 +19,17 @@
 % User microtype package to get some nicer font details
 % http://www.ctan.org/tex-archive/macros/latex/contrib/microtype
 \usepackage{microtype}
+
+% Other packages
+\usepackage{graphicx} % ability to include graphics
+\usepackage[pdftex]{hyperref} % hyperrefs inside of PDF
+\hypersetup{colorlinks,
+            citecolor=black,
+            filecolor=black,
+            linkcolor=black,
+            urlcolor=blue,
+            pdftitle={\mytitle},
+            pdfauthor={\myauthor}}
 
 % Use hyperref package to allow hyperlinks inside of the PDF document and PDF metadata
 % http://en.wikibooks.org/wiki/LaTeX/Hyperlinks
@@ -41,6 +53,17 @@
     citecolor=black,         % color of links to bibliography
     filecolor=black,         % color of file links
     urlcolor=blue            % color of external links
+}
+
+% We should look for graphics in these directories
+\graphicspath{
+{../resources/usecases/usecase1/}
+{../resources/usecases/usecase2/}
+{../resources/component-design/}
+{../resources/implementation/}
+{../resources/flickr/}
+{../resources/cc/}
+{../resources/pdfviewer/}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -107,11 +130,8 @@ Sed sapien mauris, dapibus at luctus sed, scelerisque ut arcu.
 \listoftables
 
 \begin{glossary}{UHR}
-   \item[CCR] Continuity of Care Record
-   \item[EHR] Electronic Health Record
-   \item[EMR] Electronic Medical Record
-   \item[PHR] Personal Health Record
-   \item[UHR] Universal Health Record
+   \item[RDFa] Resource Description Framework -- in -- attributes
+   \item[XDM] Extensible Metadata Platform
    \item[XML] eXtensible Markup Language
 \end{glossary}
 
@@ -225,6 +245,46 @@ imperdiet eget. Curabitur nec mi massa, sit amet vestibulum libero.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{\label{chapter:impl}Implementation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!htpb]
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{usecase1-27.pdf}
+    \end{center}
+  \caption[Use case 1]{Use case 1.}
+  \label{fi:usecase1}
+\end{figure}
+
+\begin{figure}[!htpb]
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{usecase2-full.pdf}
+    \end{center}
+  \caption[Use case 2]{Use case 2.}
+  \label{fi:usecase2}
+\end{figure}
+
+\begin{figure}[!htpb]
+    \begin{center}
+            \includegraphics[width=1.0\textwidth]{compliance-checking-tool.pdf}
+    \end{center}
+    \caption[Compliance Checking Tool]{Compliance Checking Tool}
+    \label{fi:complianceCheckingTool}
+\end{figure}
+
+\begin{figure}[!htpb]
+    \begin{center}
+            \includegraphics[width=1.0\textwidth]{todo.pdf}
+    \end{center}
+    \caption[License Reasoning Engine]{License Reasoning Engine}
+    \label{fi:licenseReasoningEngine}
+\end{figure}
+
+\begin{figure}[!htpb]
+    \begin{center}
+            \includegraphics[width=1.0\textwidth]{todo.pdf}
+    \end{center}
+    \caption[CC+ Broker Service]{CC+ Broker Service}
+    \label{fi:ccPlusBrokerService}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{\label{chapter:conc}Conclusions}
@@ -342,20 +402,20 @@ porta. Curabitur dapibus nulla vel orci tempus at dignissim ante adipiscing.
 Aliquam congue cursus semper. Cras nulla libero, porta ac ultrices nec,
 consectetur sed justo. Donec sed augue mauris, vitae adipiscing eros.
 
-\chapter*{Appendices}
+%\chapter*{Appendices}
 
-\addcontentsline{toc}{chapter}{Appendices}
+%\addcontentsline{toc}{chapter}{Appendices}
  % Next lines duplicated from .toc file and used to create mini
  % "Appendix Table of Contents," if desired:
    %\contentsline {chapter}{\numberline {A}Proving the biggie}{4}
    %\contentsline {chapter}{\numberline {B}Derivation of somthing else}{5}
  % End mini table of contents
 
-\appendix
-\chapter{Proving the biggie}
-   For proving $E=MC^2$, I refer the reader to many of grandpa's famous books on this subject.
-\chapter{Derivation of somthing else}
-   To derive $A = \pi r^2$, simply not that a circle is really a square without corners.  QED.
+%\appendix
+%\chapter{Proving the biggie}
+%   For proving $E=MC^2$, I refer the reader to many of grandpa's famous books on this subject.
+%\chapter{Derivation of somthing else}
+%   To derive $A = \pi r^2$, simply not that a circle is really a square without corners.  QED.
 
 %\bibliographystyle{AMS}
 \bibliographystyle{plain}
