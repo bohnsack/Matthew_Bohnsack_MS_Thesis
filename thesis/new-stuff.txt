@@ -1,0 +1,125 @@
+RDF:
+
+1) Intro on from RP 
+
+1.5) All RDF references from RP intro
+
+2) Graphs of nodes
+
+3) subject, predicate, object
+
+4) formats: turtle, N3, N-tripple, RDF/XML (normative).
+
+5) Example (need to reference W3schools RDF tutorial):
+
+<?xml version="1.0"?>
+
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:ex="http://bohnsack.github.com/rdf/">
+
+ <rdf:Description rdf:about="http://bohnsack.github.com/">
+   <ex:author>Matthew Paul Bohnsack</ex:author>
+   <ex:title>Matthew Bohnsack's Homepage</ex:title>
+ </rdf:Description>
+</rdf:RDF>
+
+Property: is a Resource that has a name, such as "author"
+Property value: is the value of a property, such as "Matthew Paul Bohnsack", but note that this could also be a URI that points elsewhere
+
+A combination of resource, property, and property value form a statement.  They are the subject, predicate, and object of a statement.
+
+From this example, we can derive two statements:
+
+"The author of http://bohnsack.github.com/ is Matthew Bohnsack":
+    - subject: http://bohnsack.github.com/
+    - predicate: author
+    - object: Matthew Bohnsack
+
+"The title of http://bohnsack.github.com/ is Matthew Bohnsack's Homepage":
+    - subject: http://bohnsack.github.com/
+    - predicate: title
+    - object: Matthew Bohnsack's Homepage
+
+See validator and graph pictures
+
+The graph is called an nodes-and-arcs diagram.
+
+Not for paper except for an overview, but: a) properties can also be defined as
+attributes (instead of elements), b) property elements can also be defined as
+resources, c) Bag, d) Seq, e) Alt, f) Collection, g) List, etc.
+
+RDF Schema (RDFS) to describe application-specific classes and properties, subclass of, etc.
+
+Dublin Core is a set of predefined properties for describing documents.
+
+Property    Definition
+Contributor An entity responsible for making contributions to the content of the resource
+Coverage    The extent or scope of the content of the resource
+Creator     An entity primarily responsible for making the content of the resource
+Format      The physical or digital manifestation of the resource
+Date        A date of an event in the lifecycle of the resource
+Description An account of the content of the resource
+Identifier  An unambiguous reference to the resource within a given context
+Language    A language of the intellectual content of the resource
+Publisher   An entity responsible for making the resource available
+Relation    A reference to a related resource
+Rights      Information about rights held in and over the resource
+Source      A Reference to a resource from which the present resource is derived
+Subject     A topic of the content of the resource
+Title       A name given to the resource
+Type        The nature or genre of the content of the resource
+
+Maybe a Dublin Core example
+
+OWL: Web Ontology Language built on top of RDF.  XML for computers, not humans.
+
+Ontology is exact description of things and their relationships.
+
+OWL and RDF are much of the same thing, but OWL is a stronger language with greater machine interpretability than RDF.
+
+OWL comes with a larger vocabulary and stronger syntax than RDF.
+
+OWL Sublanguages
+
+OWL has three sublanguages:
+
+OWL Lite
+OWL DL (includes OWL Lite)
+OWL Full (includes OWL DL)
+
+RDF uses URIs as the basis of its mechanism for identifying subjects,
+predicates, and objects in statements.  Objects in RDF can be either URIrefs or
+constant values (called literals).
+
+Can also do the above example in tripples:
+
+<http://bohnsack.github.com/> <http://bohnsack.github.com/rdf/author> "Matthew Paul Bohnsack" .
+<http://bohnsack.github.com/> <http://bohnsack.github.com/rdf/title> "Matthew Bohnsack's Homepage" .
+
+The RDF Vocabulary Description Language
+
+namespace and vocabulary
+
+common vocabularies include Dublin Core (already discussed), foaf (friend of a friend), and others.
+
+
+RDF can only represent binary relationships.  Where we need 1-to-n, we can use blank nodes.
+
+Blank nodes have other uses.  E.g., refer to something that doesn't have a good URI.  It then means "there is a resource".
+
+RDF offers typed literals
+
+exstaff:85740 exterms:age "27"^^xsd:integer .
+
+    - set of values (value space)
+    - set of character strings (lexical space)
+    - lexical-to-value mapping
+
+rdf:type
+
+- containers: rdf:Bag, rdf: Seq, rdf:Alt
+
+
+
+
