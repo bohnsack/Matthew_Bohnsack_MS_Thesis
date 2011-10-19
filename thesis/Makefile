@@ -16,12 +16,12 @@ output_types := pdf
 output_files := $(foreach ext, $(output_types), $(addsuffix .$(ext), $(basename $(source_files))))
 
 # extensions for files that will get removed on a 'make clean'
-extra_types := aux log out idx ilg ind bbl blg nav snm toc vrb
+extra_types := aux log out idx ilg ind bbl blg nav snm toc vrb lof lot
 extra_files := $(foreach ext, $(extra_types), $(addsuffix .$(ext), $(basename $(source_files))))
 
 # all graphics, listings, etc from *.tex
 #DEPS = $(shell ./list_dependencies)
-DEPS = $(shell find resources/logos/* figures/* listings/* -type f 2>/dev/null)
+DEPS = $(shell find *.bib resources/logos/* figures/* listings/* -type f 2>/dev/null)
 
 all: $(output_files)
 
