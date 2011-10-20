@@ -442,8 +442,6 @@ breakatwhitespace=false,        % sets if automatic breaks should only happen at
                     \end{itemize}
             \end{itemize}
             \item However, what do these things mean?  How are they implemented?
-            % TODO: Show screenshot of http://creativecommons.org/ns#DerivativeWorks
-            % TODO: and describe RDF schema and what can be derived from it.
         \end{itemize}
 \end{frame}
 
@@ -469,12 +467,30 @@ breakatwhitespace=false,        % sets if automatic breaks should only happen at
 \frametitle{CC RDF Schema}
         \begin{itemize}
             \item License RDF(a) references \texttt{\#DerivativeWorks}, etc., in the CC namespace that's defined by a schema that's human-readable and machine-readable RDF.
-            \item But... how immediately actionable is this schema?
+            \item But... how immediately machine actionable is this schema?
             \item Partial screenshot below:
         \end{itemize}
         \begin{center}
-            \includegraphics[width=0.4\textwidth]{schema-screenshot1.png}
+            \includegraphics[width=0.4\textwidth]{schema-screenshot-partial.png}
         \end{center}
+        \begin{itemize}
+            \item We would like to investigate replacing or augmenting RDF(a)
+            in the license deed with a license that's described with our DSL
+        \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{DSL-Based License Deed}
+    \begin{itemize}
+        \item By investigating replacing the contents of a license like
+        \url{http://creativecommons.org/licenses/by/3.0/} with something that
+        expresses the license in terms our DSL, we hope to:
+        \begin{itemize}
+            \item Maintain equivalent license semantics
+            \item Express the semantics in a form that is easier for humans to read and write
+            \item Enable a machine to more directly execute the license and reason over it
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 
     \begin{frame}[t]
@@ -486,8 +502,6 @@ breakatwhitespace=false,        % sets if automatic breaks should only happen at
             \includegraphics[width=0.7\textwidth]{embedded_xmp.png}
         \end{center}
     \end{frame}
-
-
 
     \subsection{Flickr}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
