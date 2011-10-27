@@ -120,6 +120,63 @@ rdf:type
 
 - containers: rdf:Bag, rdf: Seq, rdf:Alt
 
+- At containers frequently used in conjunction with language tagging.  RDF/XML
+  permits the use of the xml:lang attribute to indicate that the element
+  content is in a specified language.  Usded fir a work whose title has been
+  translated into several languages might have its title property pointing to
+  an Alt 
+
+- Not constructing containers as in a programming language.  Instead describing
+  containers.
+
+- rdf:li vis rdf:_2
+
+- rdf:parseType="Collection" - ordered lists
+
+- Reification: talk about who provided a particular piece of information: rdf:Statement, rdf:Subject, rdf:predicate, rdf:object
+    - reification quad
+    - using rdf:ID
+    - might not be as rich as you think
+
+- structured values.  See example 21.
+
+- 4.5 XML Literals
+
+- 5.0 Defining RDF Vocabularies: RDF Schema
+
+    - Type system for RDF, but don't think of it as rigid as e.g., the type system in Java or even Ruby.
+    - Provides facilites to describe classes and properties such as ex:Person
+      and ex:jobTitle and to indicate which classes and properties are expected
+      to be used together.
+    - Allows resources to be defined as instances of one or more classes
+    - Allows classes to be arranged in a hierarchical fashion.  e.g., class ex:Dog is subclass of ex:Mammal
+    - Schemas are still RDF graphs
+    - To understand additional meanings for RDF schema vocabulary, RDF software must process rdf: vocabulary + rdfs: vocabulary
+    - Convention that classes start with uppercase letter, but property and
+      instance names are written with initial lowercase letter.
+    - examples from paper: a) classes, b) properties
+    - properties: rdfs:range, rdfs:domain
+        - ranges has point to both classes (and multiple classes) and and indicate that the value of a property is given by a typed literal
+        - rdfs:domain property is used to indicate that a particualr property applies to a designated class
+    - other:
+        - cardinality constraints
+        - specifying if properties are transitive
+        - specifying that a given property is a unique identifier
+        - specifying that two different classes actually represent the same class
+        - specifying that two different instances actually represent the same individual
+        - specifying constraints on the range or cardinality of a property that
+          depend on the calss of resource to which a property is applied.
+          e.g., being able to say that for a soccer team the ex:hasPlayers
+          proptery has 11 values, while for a basketball teams the same
+          property should have only 5 values.
+        - ability to describe new classes in terms of combinates (unions and intersections) of other classes.
+    - In addtion to the cabibilities described above, onlology languages like
+      OWL which are based on RDF and RDF Schema can provide additional
+      machine-processable semantics for resources, that is, to make the machine
+      representations of resources moer closely resemble their intended real
+      world counterparts.
+
+
 
 
 
