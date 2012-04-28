@@ -118,15 +118,15 @@ well-understood common terms, such that authors reserve some rights.  More and
 more content is being shared online under Creative Commons licenses.  As such,
 it is very easy to create mash-ups or derivative works, based on many different
 assets licensed under different Creative Commons licenses.  What's not so easy
-is to pick a license compatible with all the diffrent licenses inside of a
-derivative work or to make sure all the licenses in a deravitive work are
+is to pick a license compatible with all the different licenses inside of a
+derivative work or to make sure all the licenses in a derivative work are
 compatible with each other.
 
 This paper looks at the conceptual and technical foundations of the Creative
 Commons, takes a survey of how these things are commonly used on the Internet
 today, and proposes an architecture, including usage management, that can be
-used to make Creative Commons more effective.  An implementation of the propsed
-arecture is presented along with a discussion on new functionality and future
+used to make Creative Commons more effective.  An implementation of the proposed
+architecture is presented along with a discussion on new functionality and future
 work it could enable.
 %\clearpage %(required for 1-page abstract)
 \end{abstract}
@@ -158,7 +158,7 @@ work it could enable.
 % http://wiki.creativecommons.org/Case_Studies/Flickr
 Creative commons is being used more and more on the web.  For example, the
 popular photo- and video-sharing site Flickr has published a case-study
-claiming that they were hosting over 200 millon CC licensed images as of
+claiming that they were hosting over 200 million CC licensed images as of
 October 2011.\cite{NEEDED}  In March of 2010, Creative Commons published a
 graph of the number of CC licensed images on Flickr.\cite{NEEDED}  This graph
 showing growth from 2006 to 2010 is reproduced in
@@ -173,27 +173,28 @@ figure~\ref{fi:CC-growth-on-Flickr} on page~\pageref{fi:CC-growth-on-Flickr}.
     \label{fi:CC-growth-on-Flickr}
 \end{figure}
 
-This is an incrredible number of images, and Flickr is not the only place that
+This is an incredible number of images, and Flickr is not the only place that
 CC licensed content can be found on the Internet.  A more detailed look at CC
 content on the Internet is given in Section~\ref{section:intro:cconi}.
 
 With all the images, video, text and other content that can be found on the web
 under different CC licenses, it is very each for make a mash-up document
-containing ``found content''.  However, it is not so eash to make sure you are
+containing ``found content''.  However, it is not so easy to make sure you are
 following all the rules when you create derivative works (mash-ups).  If you
 combine dozens or even hundreds of assets together, each of which might have a
-slightly diffferent Creative Commons licese, how can you ensure that your
+slightly different Creative Commons license, how can you ensure that your
 intended use is 100\% compliant with all of the licensed content?  Further, if
-an asset you want to use has a license incompatible with your intentd use, is
+an asset you want to use has a license incompatible with your intended use, is
 there an easy way for you to acquire an alternative license that lets you use
 the asset in the way you want to? 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\label{section:intro:cc}Creative Commons Overview}
+\section{\label{section:intro:cc}Creative Commons}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Creative Commons}\label{sec:model-cc}
+\subsection{Overview}\label{section:intro:cc:overview}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The Creative Commons is a nonprofit organization that provides free,
 easy-to-use legal tools that provide a simple, standardized way to pre-clear
@@ -201,7 +202,33 @@ usage rights to creative works for copyright owners.  It gives copyright
 holders an easy way to license their works in a way that leaves ``some rights
 reserved'' as compared to the ``all rights reserved'' default.  By providing
 these legal tools, the Creative Commons hopes to increase the amount of
-creativity available ``in the commons''.
+creativity available ``in the commons''.  These licenses are not an alternative
+to copyright.  Instead they apply on top of copyright, clarifying which rights
+are extended to others and which rights are retained by the authors, under
+their copyrights.
+
+The Creative Commons provides detailed guidelines for annotating text, images,
+audio, and video, to clearly specify how content is licensed, with a small
+common set of relatively easy to understand licenses.  They also provide
+guidelines for publishing via file sharing and social networking sites.  Some
+support is provided for embedding license information as meta-data within
+digital files.  The architecture presented in this paper makes extensive use of
+the electronic embedding of license information in files.
+
+It is important to understand a few other things about Creative Commons.
+Firstly content licensed under Creative Commons licenses is not changeable or
+revocable.  That is, once someone has received a copy of some CC-licensed
+content, the work is perpetually licensed under the license it was received
+under.  Secondly, view is always permissible under CC.  In other words, no CC
+license prevents someone from viewing, reading, or listening to the CC-licensed
+content.  Secondly, non-exclusive CC licenses are possible.  This means, for
+example, that a particular piece of content may be licensed to the general
+public in a way that is relatively restrictive, but if someone wanted a less
+restrictive license, they could negotiate with the copyright holder for a
+different license.
+
+\subsection{License Types}\label{section:intro:cc:license types}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Seven main license types are defined by Creative Commons:
 
@@ -250,6 +277,17 @@ Seven main license types are defined by Creative Commons:
   download your works and share them with others as long as they credit you, but
   they can't change them in any way or use them commercially.
 \end{enumerate}
+
+All of the six non-Public Domain licenses can be made non-exclusive with
+``CC+''\cite{NEEDED}.  This provides an explicit mechanism by which a
+CC-licensed work can be marked up to express that different custom license
+terms can be negotiated and how the author might be contacted to start such
+negotiation.
+
+\subsection{Creative Commons Rights Expression Language}\label{section:intro:cc:ccrel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+blarg.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
