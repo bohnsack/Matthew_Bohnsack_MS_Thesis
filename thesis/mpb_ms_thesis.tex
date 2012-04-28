@@ -4,7 +4,7 @@
 \documentclass[botnum,fleqn,final]{unmeethesis}
 
 % Set Title and Author
-\newcommand{\mytitle}{Making Creative Commons More Useful with Usage Management}
+\newcommand{\mytitle}{Making Creative Commons More Effective\\with Usage Management}
 \newcommand{\myauthor}{Matthew Paul Bohnsack}
 
 
@@ -66,6 +66,11 @@
 {../resources/pdfviewer/}
 }
 
+% http://www.gijsk.com/blog/2008/06/absence-citation-needed/
+\usepackage{ifthen}
+\let\oldcite=\cite
+\renewcommand\cite[1]{\ifthenelse{\equal{#1}{NEEDED}}{[citation~needed]}{\oldcite{#1}}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,24 +110,25 @@
 \maketitleabstract
 
 \begin{abstract}
-This is were the abstract will go.
+The Creative Commons provides legal and technical infrastructure that allows
+intellectual property to be shared in terms that are more flexible than the
+default ``all rights reserved''.  Under Creative Commons licenses, content can
+be distributed widely online, but still controlled with specific,
+well-understood common terms, such that authors reserve some rights.  More and
+more content is being shared online under Creative Commons licenses.  As such,
+it is very easy to create mash-ups or derivative works, based on many different
+assets licensed under different Creative Commons licenses.  What's not so easy
+is to pick a license compatible with all the diffrent licenses inside of a
+derivative work or to make sure all the licenses in a deravitive work are
+compatible with each other.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci massa.
-In hac habitasse platea dictumst. Praesent non sem ut diam dignissim elementum.
-Nulla in ligula non enim tristique dignissim. Pellentesque massa leo, ornare eu
-rutrum quis, fringilla at odio. Aliquam leo mi, convallis et volutpat sed,
-pellentesque at purus. Maecenas accumsan magna in ante mattis feugiat. Nam quis
-nisi tellus. Pellentesque a lectus ipsum, eget suscipit ante. In hac habitasse
-platea dictumst. Sed vulputate, arcu auctor sodales vehicula, nisi diam
-dignissim dui, in mollis risus lectus id dolor. Sed ultricies tincidunt elit
-sit amet egestas. Sed sed sodales purus. Proin scelerisque, diam at lacinia
-tristique, metus nulla vehicula est, in blandit dui nibh non quam. Quisque
-posuere porttitor mi in aliquam. Nullam eget pulvinar erat. Quisque ac velit ac
-sapien porttitor euismod non et sem. Donec sodales, erat vitae vestibulum
-eleifend, est nisl venenatis nibh, ac aliquet odio turpis scelerisque libero.
-Sed sapien mauris, dapibus at luctus sed, scelerisque ut arcu.
-
-\clearpage %(required for 1-page abstract)
+This paper looks at the conceptual and technical foundations of the Creative
+Commons, takes a survey of how these things are commonly used on the Internet
+today, and proposes an architecture, including usage management, that can be
+used to make Creative Commons more effective.  An implementation of the propsed
+arecture is presented along with a discussion on new functionality and future
+work it could enable.
+%\clearpage %(required for 1-page abstract)
 \end{abstract}
 
 \tableofcontents
@@ -142,94 +148,116 @@ Sed sapien mauris, dapibus at luctus sed, scelerisque ut arcu.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\label{section:intro:overview}Overview}
+\section{\label{section:intro:motivation}Motivation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-This is the introduction, and this is a example of a
-citation.\cite{McCarron:09:H} It's possible to do multiple citations at
-once.\cite{McCarron:09:H,Pemberton:08:RXS,Birbeck:08:RP,ccREL}
+%This is the introduction, and this is a example of a
+%citation.\cite{McCarron:09:H} It's possible to do multiple citations at
+%once.\cite{McCarron:09:H,Pemberton:08:RXS,Birbeck:08:RP,ccREL}
 
+% http://wiki.creativecommons.org/Case_Studies/Flickr
+Creative commons is being used more and more on the web.  For example, the
+popular photo- and video-sharing site Flickr has published a case-study
+claiming that they were hosting over 200 millon CC licensed images as of
+October 2011.\cite{NEEDED}  In March of 2010, Creative Commons published a
+graph of the number of CC licensed images on Flickr.\cite{NEEDED}  This graph
+showing growth from 2006 to 2010 is reproduced in
+figure~\ref{fi:CC-growth-on-Flickr} on page~\pageref{fi:CC-growth-on-Flickr}.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci massa.
-In hac habitasse platea dictumst. Praesent non sem ut diam dignissim elementum.
-Nulla in ligula non enim tristique dignissim. Pellentesque massa leo, ornare eu
-rutrum quis, fringilla at odio. Aliquam leo mi, convallis et volutpat sed,
-pellentesque at purus. Maecenas accumsan magna in ante mattis feugiat. Nam quis
-nisi tellus. Pellentesque a lectus ipsum, eget suscipit ante. In hac habitasse
-platea dictumst. Sed vulputate, arcu auctor sodales vehicula, nisi diam
-dignissim dui, in mollis risus lectus id dolor. Sed ultricies tincidunt elit
-sit amet egestas. Sed sed sodales purus. Proin scelerisque, diam at lacinia
-tristique, metus nulla vehicula est, in blandit dui nibh non quam. Quisque
-posuere porttitor mi in aliquam. Nullam eget pulvinar erat. Quisque ac velit ac
-sapien porttitor euismod non et sem. Donec sodales, erat vitae vestibulum
-eleifend, est nisl venenatis nibh, ac aliquet odio turpis scelerisque libero.
-Sed sapien mauris, dapibus at luctus sed, scelerisque ut arcu.
+% http://creativecommons.org/weblog/entry/20870
+\begin{figure}[!htpb]
+    \begin{center}
+            \includegraphics[width=1.0\textwidth]{cc-flickr-total-20100225.png}
+    \end{center}
+    \caption[CC licensed image on Flickr (Total)]{CC licensed images on Flickr (Total)}
+    \label{fi:CC-growth-on-Flickr}
+\end{figure}
 
-Maecenas ac mauris urna. Praesent vehicula fringilla condimentum. Nam nec dolor
-ac turpis accumsan scelerisque. Maecenas ut porttitor ipsum. Suspendisse
-lobortis ligula ac metus adipiscing sollicitudin at vulputate lacus. Fusce
-aliquet, libero quis tristique aliquet, nisl sem dapibus dui, mollis
-sollicitudin diam metus at metus. Pellentesque ante ante, accumsan et mattis
-ut, dictum eget libero. Etiam accumsan faucibus lectus, eu aliquet metus
-tincidunt vitae. Sed nec lorem in tellus convallis porttitor nec et diam.
-Praesent risus purus, venenatis vitae tincidunt ac, facilisis eget arcu.
-Pellentesque sit amet nisi quis turpis laoreet venenatis eu in nunc.
+This is an incrredible number of images, and Flickr is not the only place that
+CC licensed content can be found on the Internet.  A more detailed look at CC
+content on the Internet is given in Section~\ref{section:intro:cconi}.
 
-Cras velit nibh, suscipit ac ultrices quis, laoreet nec elit. Proin varius, mi
-non convallis sollicitudin, enim metus tristique lacus, non dignissim nibh nibh
-vel turpis. Ut odio dui, vulputate sed commodo vel, venenatis ut ipsum. Lorem
-ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est diam,
-tristique ut facilisis eu, mattis pellentesque dolor. Nunc nulla dui, aliquet
-eu semper at, consequat id odio. Suspendisse dignissim arcu non purus
-vestibulum eu accumsan arcu vulputate. Cum sociis natoque penatibus et magnis
-dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et
-magnis dis parturient montes, nascetur ridiculus mus. Cras vehicula massa id
-sapien blandit tristique. Ut mattis dapibus malesuada. Integer rutrum, libero
-et pellentesque venenatis, nisl ligula tempor diam, sit amet dapibus libero
-arcu vitae sapien. Donec sagittis tincidunt elit non faucibus. Sed dapibus
-augue a nulla ultrices aliquet fermentum odio consectetur. Sed volutpat ornare
-porta. Curabitur dapibus nulla vel orci tempus at dignissim ante adipiscing.
-Aliquam congue cursus semper. Cras nulla libero, porta ac ultrices nec,
-consectetur sed justo. Donec sed augue mauris, vitae adipiscing eros.
+With all the images, video, text and other content that can be found on the web
+under different CC licenses, it is very each for make a mash-up document
+containing ``found content''.  However, it is not so eash to make sure you are
+following all the rules when you create derivative works (mash-ups).  If you
+combine dozens or even hundreds of assets together, each of which might have a
+slightly diffferent Creative Commons licese, how can you ensure that your
+intended use is 100\% compliant with all of the licensed content?  Further, if
+an asset you want to use has a license incompatible with your intentd use, is
+there an easy way for you to acquire an alternative license that lets you use
+the asset in the way you want to? 
 
-Maecenas non velit sem, non mollis mi. Integer ut enim enim. Curabitur sed est
-at tellus porttitor placerat. Maecenas ultrices turpis nec tortor interdum
-convallis vitae et est. Nullam vestibulum elit et nisl mattis adipiscing.
-Phasellus eget varius odio. Praesent ac metus at libero vestibulum luctus id
-eget nisl. Praesent posuere massa eu urna blandit ut consequat justo pharetra.
-Nunc faucibus enim a enim commodo dapibus. Mauris rhoncus eros nunc. Donec
-feugiat urna ac quam elementum quis hendrerit sapien dignissim. Vestibulum
-porta turpis ac lacus vestibulum ut consequat ipsum bibendum. Praesent pretium
-eros sit amet mauris faucibus vitae ultrices nunc adipiscing. Fusce leo lectus,
-consequat tincidunt aliquam vel, aliquet a ligula.
-
-Quisque eget condimentum mauris. Nam quis purus eget justo venenatis vehicula
-nec id velit. Curabitur a quam ipsum, luctus gravida urna. Integer tristique
-risus et lectus dictum ac ultricies nulla pretium. Ut sit amet viverra diam.
-Praesent ac nisl quis nibh bibendum ullamcorper. Nullam pharetra risus sit amet
-tortor convallis euismod accumsan sit amet quam. Duis fermentum aliquet
-suscipit. Praesent in sem eros, porta gravida quam. Sed elementum magna
-fringilla leo fringilla semper ornare mauris pulvinar. In vel eleifend mauris.
-Pellentesque neque tortor, euismod ut vestibulum rutrum, gravida sed sem. Lorem
-ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt augue ac
-tellus adipiscing fringilla. Suspendisse ac dolor orci. Praesent dictum dolor
-quis lorem sollicitudin tempus. Nunc dictum pretium nunc, ac egestas velit
-imperdiet eget. Curabitur nec mi massa, sit amet vestibulum libero.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\label{section:intro:ehr}Electronic Health Records}
+\section{\label{section:intro:cc}Creative Commons Overview}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Creative Commons}\label{sec:model-cc}
+
+The Creative Commons is a nonprofit organization that provides free,
+easy-to-use legal tools that provide a simple, standardized way to pre-clear
+usage rights to creative works for copyright owners.  It gives copyright
+holders an easy way to license their works in a way that leaves ``some rights
+reserved'' as compared to the ``all rights reserved'' default.  By providing
+these legal tools, the Creative Commons hopes to increase the amount of
+creativity available ``in the commons''.
+
+Seven main license types are defined by Creative Commons:
+
+\begin{enumerate}
+  \item \emph{Public Domain}:
+
+  This license doesn't put any restrictions on how others may remix, tweak, or
+  build upon your work.
+
+  \item \emph{Attribution}:
+
+  This license lets others distribute, remix, tweak, and build upon your work,
+  even commercially, as long as they credit you for the original creation. This
+  is the most accommodating of the licenses offered.  It is recommended for
+  maximum dissemination and use of licensed materials.
+
+  \item \emph{Attribution, Share-Alike}:
+
+  This license lets others remix, tweak, and build upon your work even for
+  commercial purposes, as long as they credit you and license their new
+  creations under the identical terms.  This license is often compared to free
+  and open source software licenses.  All new works based on yours will carry
+  the same license, so any derivatives will also allow commercial use.
+
+  \item \emph{Attribution, No-Derivatives}:
+
+  This license allows for redistribution, commercial and non-commercial, as
+  long as it is passed along unchanged and in whole, with credit to you.
+
+  \item \emph{Attribution, Non-Commercial}:
+
+  This license lets others remix, tweak, and build upon your work
+  non-commercially, and although their new works must also acknowledge you and be
+  non-commercial, they don't have to license their derivative works on the same
+  terms.
+
+  \item \emph{Attribution, Non-Commercial, Share-Alike}:
+
+  This license lets others remix, tweak, and build upon your work
+  non-commercially, as long as they credit you and license their new creations
+  under the identical terms.
+
+  \item \emph{Attribution, Non-Commercial, No-Derivatives}:
+
+  This license is the most restrictive of the licenses, only allowing others to
+  download your works and share them with others as long as they credit you, but
+  they can't change them in any way or use them commercially.
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\label{section:intro:cconi}Creative Commons on the Internet Today}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\label{section:intro:ar}Active Record Design Pattern}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\label{section:intro:dp}Dynamic Programming}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\label{section:intro:mot}Motivation}
+\section{\label{section:intro:um}Usage Management}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
